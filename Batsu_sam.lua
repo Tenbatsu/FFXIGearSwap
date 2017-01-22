@@ -45,13 +45,13 @@ function get_sets()
 	--Some Job Abilities
 	
 	--Hasso
-	--sets.precast.Hasso = {legs = "Unkai Haidate +1"}
+	sets.precast.["Hasso"] = {legs = "Unkai Haidate +1"}
 	
 	--Seigan
 	--sets.precast.Seigan = {head = "Unkai Kabuto +1"}
 	
 	--Sekkanoki
-	sets.precast.Sekkanoki = {hands = "Unkai Kote +1"}
+	sets.precast["Sekkanoki"] = {hands = "Unkai Kote +1"}
 	
 	--Third Eye
 	sets.precast["Third Eye"] = {legs = "Saotome Haidate"}
