@@ -28,8 +28,8 @@ function get_sets()
         hands="Adhemar Wristbands",
         ring1="Vocane Ring",
         ring2="Defending Ring",
-		back="Mecisto. Mantle",
-        --back="Shadow Mantle",
+		--back="Mecisto. Mantle",
+        back="Shadow Mantle",
         waist="Flume Belt +1",
         legs="Carmine Cuisses",
         feet="Herculean Boots"
@@ -37,7 +37,7 @@ function get_sets()
 	sets.idle.reive = set_combine(sets.idle, {neck="Adoulin's Refuge +1"})
     sets.idle.adoulin = set_combine(sets.idle, {body="Councilor's Garb"})
     sets.idle.diffusion = set_combine(sets.idle, {feet="Luhlaza Charuqs"})
-	sets.idle.mogGarden = set_combine(sets.idle, {body="Jubilee Shirt", hands="Field Gloves", waist="Field Rope", feet="Field Boots"}) --neck="Field Torque" on Limony you idiot
+	sets.idle.mogGarden = set_combine(sets.idle, {body="Jubilee Shirt", hands="Field Gloves", waist="Field Rope", feet="Field Boots", neck="Field Torque"})
 	
 	sets.precast = {}
     sets.precast.FC = {
@@ -56,7 +56,7 @@ function get_sets()
     sets.engaged = {
         ammo="Ginsen",
         head="Dampening Tam",
-        neck="Clotharius Torque",
+        neck="Combatant's Torque",
         ear1="Steelflash Earring",
         ear2="Bladeborn Earring",
         body="Rawhide Vest",
@@ -193,21 +193,17 @@ end
  
  function buff_change(new, bool)
 	if new == 'Reive Mark' and bool then
-	equip(sets.idle.reive)
-	disable('neck')
+		equip(sets.idle.reive)
+		disable('neck')
 	elseif new == 'Reive Mark' and not bool then
-	enable('neck')
-	aftercast()
-	end
-end
-
-function buff_change(new, bool)
-	if new == 'Diffusion' and bool then
-	equip(sets.idle.diffusion)
-	disable('feet')
+		enable('neck')
+		aftercast()
+	elseif new == 'Diffusion' and bool then
+		equip(sets.idle.diffusion)
+		disable('feet')
 	elseif new == 'Diffusion' and not bool then
-	enable('feet')
-	aftercast()
+		enable('feet')
+		aftercast()
 	end
 end
 
@@ -253,4 +249,3 @@ function status_change(new,old)
     end
 end
 
---Spells to Get:  Verve, Whirl of Rage,

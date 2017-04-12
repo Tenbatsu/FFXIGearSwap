@@ -16,10 +16,10 @@ function get_sets()
 	sets.aftercast.Idle = {
 		ammo = "Ginsen",
 		head = "Dampening Tam",
-		neck = "Clotharius Torque",
+		neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
-		body = "Herculean Vest",
+		body = "Adhemar Jacket",
 		hands = "Adhemar Wristbands",
 		ring1 = "Rajas ring",
 		ring2 = "Epona's Ring",
@@ -28,14 +28,15 @@ function get_sets()
 		legs = "Samnuha Tights",
 		feet = "Skd. Jambeaux +1"
 	}
+	sets.mogGarden = {body="Jubilee Shirt", hands="Field Gloves", waist="Field Rope", feet="Field Boots", neck="Field Torque"}
 	--Set for face punching
 	sets.aftercast.TP = {
 		ammo = "Ginsen",
 		head = "Dampening Tam",
-		neck = "Clotharius Torque",
+		neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
-		body = "Herculean Vest",
+		body = "Adhemar Jacket",
 		hands = "Adhemar Wristbands",
 		ring1 = "Rajas ring",
 		ring2 = "Epona's Ring",
@@ -61,7 +62,7 @@ function get_sets()
     --Curing Waltz Targets VIT + Casters CHR
     sets.precast.Waltz = {
         head = "Horos Tiara",
-    	neck = "Clotharius Torque",
+    	neck = "Combatant's Torque",
 		ear1 = "Roundel Earring",
 		ear2 = "Delta Earring",
 		body = "Maxixi Casaque +1",
@@ -74,10 +75,10 @@ function get_sets()
 		feet = "Maxixi Shoes +1"
     }
 		
-	--Flourish
+	--Flourishes
     sets.precast.Flourish = {
         head = "Maxixi Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
     	ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
@@ -92,7 +93,7 @@ function get_sets()
     --Provoke
 	sets.precast['Animated Flourish'] = {
         head = "Maxixi Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
@@ -107,7 +108,7 @@ function get_sets()
     --Stun
     sets.precast['Violent Flourish'] = {
         head = "Maxixi Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Horos Casaque",
@@ -122,7 +123,7 @@ function get_sets()
     --TP
     sets.precast['Reverse Flourish'] = {
         head = "Maxixi Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
@@ -137,7 +138,7 @@ function get_sets()
 	--Critical Strikuuuuu
     sets.precast['Climactic Flourish'] = {
         head = "Maculele Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
     	ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
@@ -152,7 +153,7 @@ function get_sets()
     --Double Attack
     sets.precast['Striking Flourish'] = {
         head = "Maxixi Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
     	ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maculele Casaque",
@@ -169,7 +170,7 @@ function get_sets()
     --Evasion Down
 	sets.precast.Step = {
         head = "Maxixi Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
@@ -184,7 +185,7 @@ function get_sets()
     --Crit Hit Evasion Down
     sets.precast['Feather Step'] = {
         head = "Maxixi Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
     	ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
@@ -200,7 +201,7 @@ function get_sets()
     --Jigs
     sets.precast.Jig = {
         head = "Maxixi Tiara +1",
-        neck = "Clotharius Torque",
+        neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
@@ -221,6 +222,9 @@ function get_sets()
 	sets.precast['Shark Bite'] = {
 		ammo = "Charis Feather",
 		neck = "Fotia Gorget",
+		body = "Adhemar Jacket",
+		ring1= "Apate Ring",
+		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
 		legs = "Herculean Trousers",
@@ -230,6 +234,9 @@ function get_sets()
 	sets.precast['Evisceration'] = { 
 		ammo = "Charis Feather",
 		neck = "Fotia Gorget",
+		body = "Adhemar Jacket",
+		ring1= "Apate Ring",
+		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
 		legs = "Herculean Trousers",
@@ -240,10 +247,11 @@ function get_sets()
 		ammo = "Charis Feather",
 		head = "Maculele Tiara +1",
 		neck = "Fotia Gorget",
+		body = "Adhemar Jacket",
+		ring1= "Apate Ring",
+		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
-		ring1 = "Ramuh Ring",
-		ring2 = "Ramuh Ring",
 		legs = "Herculean Trousers",
 		ear1 ="Moonshade Earring",
 		feet ="Lustratio Leggings"}
@@ -252,10 +260,11 @@ function get_sets()
 	    ammo = "Charis Feather",
 		head = "Maculele Tiara +1",
 		neck = "Fotia Gorget",
+		body = "Adhemar Jacket",
+		ring1= "Apate Ring",
+		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
-		ring1 = "Rajas ring",
-		ring2 = "Ramuh Ring",
 		legs = "Herculean Trousers",
 		ear1 = "Moonshade Earring",
 		feet = "Lustratio Leggings"}
@@ -263,6 +272,9 @@ function get_sets()
 	sets.precast['Extenerator'] = { 
 		ammo = "Charis Feather",
 		neck = "Fotia Gorget",
+		body = "Adhemar Jacket",
+		ring1= "Apate Ring",
+		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
 		legs = "Herculean Trousers",
@@ -272,13 +284,16 @@ function get_sets()
 	sets.precast['Aeolian Edge'] = { 
 		ammo = "Charis Feather",
 		neck = "Fotia Gorget",
+		body = "Samnuha Coat",
 		back = "Senuna's mantle",
+		hands = "Leyline Gloves",
+		ring1 = "Mephitas's Ring",
+		ring2 = "Acumen Ring",
 		waist = "Fotia Belt",
 		legs = "Herculean Trousers",
 		ear1 = "Hecate's Earring",
-		ear2 = "Moldavite Earring",
+		ear2 = "Crematio Earring",
 		feet = "Lustratio Leggings"}
-		
 	--Set for Fast Casting Utsusemi
 	sets.precast.FastCast = {
 	--neck="Magoraga Beads",

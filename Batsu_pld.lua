@@ -16,7 +16,7 @@ CurrentMode = 1
                 neck = "Diemer Gorget",
                 ear1 = "Etiolation Earring",
                 ear2 = "Ethereal Earring",
-                body = "Souveran Cuirass",
+                body = "Rev. Surcoat +2",
                 hands = "Souv. Handschuhs",
                 ring1 = "Defending Ring",
                 ring2 = "Vocane Ring",
@@ -45,7 +45,7 @@ CurrentMode = 1
 		--Set for face punching
         sets.aftercast.Damage = {
                 head = "Flam. Zucchetto +1",
-                neck = "Clotharius Torque",
+                neck = "Combatant's Torque",
                 ear1 = "Steelflash earring",
                 ear2 = "Bladeborn Earring",
                 body = "Flamma Korazin +1",
@@ -138,6 +138,7 @@ CurrentMode = 1
         --Set for Fast Casting
         sets.precast.FastCast = {
         head = "Chev. Armet +1",
+		body= "Rev. Surcoat +2", 
 		hands = "Leyline Gloves",
         ear1 = "Loquac. Earring",
 		ear2 = "Etiolation Earring",
