@@ -2,16 +2,8 @@ res = require('resources')
 map = require('BLUSpellMap')
 -- Sets
 
-send_command('input /macro book 3; wait 1; input /lockstyleset 2; wait 1')
-if player.sub_job=="NIN" then
-	send_command('input /macro set 1')
-elseif player.sub_job=="DNC" then
-	send_command('input /macro set 2')
-elseif player.sub_job=="THF" then
-	send_command('input /macro set 3')
-elseif player.sub_job=="WAR" then
-	send_command('input /macro set 4')
-end
+send_command('wait 3; input /lockstyleset 2;')
+
 	
 disable('main','sub')
 
@@ -44,11 +36,14 @@ function get_sets()
 		ear1="Etiolation Earring",
         ear2="Loquac. Earring",
         body="Samnuha Coat",
+		neck="Voltsurge Torque",
         --back="Swith Cape +1",
-        --waist="Witful Belt",
+        waist="Siegel Sash",
         hands="Leyline Gloves",
         legs="Lengo Pants",
-        ring1="Rahab Ring"
+        ring1="Rahab Ring",
+		ring2="Kishar Ring",
+		feet="Amalric Nails"
         }
  
     sets.resting = {}
@@ -97,6 +92,7 @@ function get_sets()
 	--Base Sets
 	sets["Blue Skill"] = {
         ammo="Mavi Tathlum",
+		hands="Assim. Bazu. +1",
         --head="Luhlaza Keffiyeh",
         --body="Assim. Jubbah +1",
         --legs="Hashishin Tayt",
@@ -125,7 +121,7 @@ function get_sets()
         gloves="Jhakri Cuffs +1",
         back="Cornflower Cape",
         --ammo="Ghastly Tathlum +1",
-        waist="Penitent's Rope",
+        waist="Eschan Stone",
         body="Jhakri robe +1"
     })
 	
@@ -150,7 +146,7 @@ function get_sets()
 		head="Jhakri Coronal +1",
         body="Samnuha Coat",
         hands="Leyline Gloves",
-        feet="Carmine Greaves",
+        --feet="Carmine Greaves",
         legs="Carmine Cuisses",
         --waist="Ocean sash",
         neck="Dualism Collar +1"   
@@ -176,7 +172,7 @@ function get_sets()
 	sets["MChr"] = set_combine(sets["Magical"], {})
 	sets["MVit"] = set_combine(sets["Magical"], {})
 	sets["MStrDex"] = set_combine(sets["Magical"], {})
-	sets["MagicalDark"] = set_combine(sets["Magical"], {}) --{head="Pixie hairpin +1"})
+	sets["MagicalDark"] = set_combine(sets["Magical"], {neck="Erra Pendant", ring2="Evanescence Ring"}) --{head="Pixie hairpin +1"})
     
 end
 

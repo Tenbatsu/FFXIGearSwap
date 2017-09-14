@@ -1,5 +1,5 @@
 
-send_command('input /macro book 2; wait 1; input /lockstyleset 11; wait 1; input /macro set 3')
+send_command('wait 3; input /lockstyleset 11')
 
 function get_sets()
     
@@ -38,7 +38,7 @@ function get_sets()
 		waist = "Windbuffet Belt +1",
 		left_ear = "Cessance Earring",
 		right_ear = "Brutal Earring",
-		left_ring = "Apate Ring",
+		left_ring = "Ilabrat Ring",
 		right_ring = "Rajas Ring",
 		back = "Takaha Mantle"
 	}
@@ -71,7 +71,7 @@ function get_sets()
 	
 	--Meditate
 	sets.precast["Meditate"] = {
-		hands = "Sao. Kote +2",
+		hands = "Sakonji Kote",
 		head = "Wakido Kabuto +1",
 		back = "Smertrios's Mantle"}
 	
@@ -82,21 +82,27 @@ function get_sets()
 	sets.precast["Warding Circle"] = {head = "Wakido Kabuto +1"}
 	
 	--Blade Bash
-	sets.precast["Blade Bash"] = {hands = "Sao. Kote +2"}
+	sets.precast["Blade Bash"] = {hands = "Sakonji Kote"}
 	
 	--Finally some weaponskill action
 	--Tachi: Yukikaze 75% STR
 	sets.precast['Tachi: Yukikaze'] = {
 		neck = "Fotia Gorget",
 		back = "Smertrios's Mantle",
+		ring1= "Ilabrat Ring",
+		ring2= "Niqmaddu Ring",
 		legs = "Valor. Hose",
-		waist = "Fotia Belt"}
+		waist = "Fotia Belt",
+		ammo = "Knobkierrie"}
 		
 	--Tachi Gekko 80% STR
 	sets.precast['Tachi: Gekko'] = {
 		neck = "Fotia Gorget",
 		back = "Smertrios's Mantle",
-		waist = "Fotia Belt"}
+		ring1= "Ilabrat Ring",
+		ring2= "Niqmaddu Ring",
+		waist = "Fotia Belt",
+		ammo = "Knobkierrie"}
 		
 	-- Tachi: Kasha 75% STR
 	sets.precast['Tachi: Kasha'] = {
@@ -104,8 +110,11 @@ function get_sets()
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
 		back = "Smertrios's Mantle",
+		ring1= "Ilabrat Ring",
+		ring2= "Niqmaddu Ring",
 		legs = "Valor. Hose",
-		waist = "Fotia Belt"}
+		waist = "Fotia Belt",
+		ammo = "Knobkierrie"}
 		
 	--Tachi: Rana 50% STR
 	sets.precast['Tachi: Rana'] = {
@@ -113,8 +122,11 @@ function get_sets()
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
 		back = "Smertrios's Mantle",
+		ring1= "Ilabrat Ring",
+		ring2= "Niqmaddu Ring",
 		legs = "Valor. Hose",
-		waist = "Fotia Belt"}
+		waist = "Fotia Belt",
+		ammo = "Knobkierrie"}
 		
 	--Tachi: Shoha 85% STR
 	sets.precast['Tachi: Shoha'] = {
@@ -122,8 +134,11 @@ function get_sets()
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
 		back = "Smertrios's Mantle",
+		ring1= "Ilabrat Ring",
+		ring2= "Niqmaddu Ring",
 		legs = "Valor. Hose",
-		waist = "Fotia Belt"}
+		waist = "Fotia Belt",
+		ammo = "Knobkierrie"}
 		
 	--Tachi: Fudo 80% STR
 	sets.precast['Tachi: Fudo'] = {
@@ -131,16 +146,22 @@ function get_sets()
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
 		back = "Smertrios's Mantle",
+		ring1= "Ilabrat Ring",
+		ring2= "Niqmaddu Ring",
 		legs = "Valor. Hose",
-		waist = "Fotia Belt"}
+		waist = "Fotia Belt",
+		ammo = "Knobkierrie"}
 	
 	sets.precast.WS = {
 		neck = "Fotia Gorget",
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
 		back = "Smertrios's Mantle",
+		ring1= "Ilabrat Ring",
+		ring2= "Niqmaddu Ring",
 		legs = "Valor. Hose",
-		waist = "Fotia Belt"}
+		waist = "Fotia Belt",
+		ammo = "Knobkierrie"}
 	
 	--Set for Fast Casting Utsusemi
 	sets.precast.FastCast = {

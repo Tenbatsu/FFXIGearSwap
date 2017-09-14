@@ -1,7 +1,7 @@
 -- The Wonderful World of Red Mage
 -- My RDM might be terrible, but it's my terrible =D
 
-send_command('input /macro book 4;wait .1;input /macro set 2;wait .2; /lockstyleset 1')
+send_command('wait 3; /lockstyleset 1')
 
 function get_sets()
 JobModes = {"Melee", "Enfeeble", "Nuking", "Bursting"}

@@ -1,6 +1,6 @@
 -- PLD
 -- Sets
-send_command('input /macro book 6;wait .1;input /macro set 1')
+send_command('wait 3;input /lockstyleset 8;')
 
 function get_sets()
 --windower.add_to_chat(123, "Wat.")
@@ -51,7 +51,7 @@ CurrentMode = 1
                 body = "Flamma Korazin +1",
                 hands = "Flam. Manopolas +1",
                 ring1 = "Rajas Ring",
-                ring2 = "Keen Ring",
+                ring2 = "Apate Ring",
                 back = "Atheling Mantle",
                 waist = "Windbuffet Belt +1",
                 legs = "Flamma Dirs +1",
@@ -80,7 +80,28 @@ CurrentMode = 1
         
         --PLD Subjobs
         --Warrior
-        sets.precast['Provoke'] = {}
+        sets.precast['Provoke'] = {
+			head = "Rev. Coronet +1",
+			neck = "Homeric Gorget",
+			body = "Souveran Cuirass",
+			hands = "Cab. Gauntlets +1",
+			ring1 = "Odium Ring",
+			waist = "Sulla Belt",
+			legs = "Cab. Breeches +1",
+			feet = "Chev. Sabatons +1"
+		}
+		
+		sets.precast['Flash'] = {
+			head = "Rev. Coronet +1",
+			neck = "Homeric Gorget",
+			body = "Souveran Cuirass",
+			hands = "Cab. Gauntlets +1",
+			ring1 = "Odium Ring",
+			waist = "Sulla Belt",
+			legs = "Cab. Breeches +1",
+			feet = "Chev. Sabatons +1"
+		}
+		
         --Dancer
         sets.precast.Waltz = {}
         sets.precast['Animated Flourish'] = {}

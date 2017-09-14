@@ -4,14 +4,7 @@
 
 res = require('resources')
 
-send_command('input /macro book 8; wait 1; input /lockstyleset 5; wait 1')
-if player.sub_job=="NIN" then
-	send_command('input /macro set 1')
-elseif player.sub_job=="DNC" then
-	send_command('input /macro set 2')
-elseif player.sub_job=="WAR" then
-	send_command('input /macro set 3')
-end
+send_command('wait 5; input /lockstyleset 5')
 
 modes = {"Treasure", "Normal"}
 curMode = "Treasure"

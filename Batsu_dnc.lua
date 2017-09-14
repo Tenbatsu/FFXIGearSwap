@@ -1,6 +1,6 @@
 -- DNC
 -- Sets
-send_command('input /macro book 5;wait .1;input /macro set 2')
+send_command('wait 3; input /lockstyleset 12;')
 
 --Steps This sets the types of step we can use
 --steps = { "Quickstep", "Box Step", "Stutter Step", "Feather Step"}
@@ -42,6 +42,22 @@ function get_sets()
 		ring2 = "Epona's Ring",
 		back = "Toetapper Mantle",
 		waist = "Windbuffet belt +1",
+		legs = "Samnuha Tights",
+		feet = "Herculean Boots"
+	}
+	
+	sets.aftercast.HighAccuracy = {
+		ammo = "Ginsen",
+		head = "Dampening Tam",
+		neck = "Combatant's Torque",
+		ear1 = "Digni. Earring",
+		ear2 = "Cessance Earring",
+		body = "Adhemar Jacket",
+		hands = "Maxixi Bangles +2",
+		ring1 = "Mars's ring",
+		ring2 = "Ilabrat Ring",
+		back = "Senuna's Mantle",
+		waist = "Anguinus belt",
 		legs = "Samnuha Tights",
 		feet = "Herculean Boots"
 	}
@@ -221,6 +237,7 @@ function get_sets()
     --Sharkbite Fragmentation DEX 40% AGI 40%
 	sets.precast['Shark Bite'] = {
 		ammo = "Charis Feather",
+		head = "Maculele Tiara +1",
 		neck = "Fotia Gorget",
 		body = "Adhemar Jacket",
 		ring1= "Apate Ring",
@@ -233,6 +250,7 @@ function get_sets()
     --Evisceration Gravitation/Transfixion DEX 50%
 	sets.precast['Evisceration'] = { 
 		ammo = "Charis Feather",
+		head = "Maculele Tiara +1",
 		neck = "Fotia Gorget",
 		body = "Adhemar Jacket",
 		ring1= "Apate Ring",
@@ -246,6 +264,7 @@ function get_sets()
 	sets.precast['Rudra\'s Storm'] = { 
 		ammo = "Charis Feather",
 		head = "Maculele Tiara +1",
+		hands = "Maxixi Bangles +2",
 		neck = "Fotia Gorget",
 		body = "Adhemar Jacket",
 		ring1= "Apate Ring",
@@ -271,6 +290,7 @@ function get_sets()
 	--Extenerator
 	sets.precast['Extenerator'] = { 
 		ammo = "Charis Feather",
+		head = "Maculele Tiara +1",
 		neck = "Fotia Gorget",
 		body = "Adhemar Jacket",
 		ring1= "Apate Ring",
@@ -283,6 +303,7 @@ function get_sets()
     --Elemental WS is weird need some MAB etc.for these
 	sets.precast['Aeolian Edge'] = { 
 		ammo = "Charis Feather",
+		head = "Maculele Tiara +1",
 		neck = "Fotia Gorget",
 		body = "Samnuha Coat",
 		back = "Senuna's mantle",
@@ -330,6 +351,7 @@ end
 function aftercast(spell)
     if player.status =='Engaged' then
         equip(sets.aftercast.TP)
+		--equip(sets.aftercast.HighAccuracy)
     else
         equip(sets.aftercast.Idle)
     end
@@ -343,6 +365,7 @@ function status_change(new,old) --State Changing between punching and idle and r
 		equip(sets.aftercast.hHP)
     elseif new == 'Engaged' then
         equip(sets.aftercast.TP)
+		--equip(sets.aftercast.HighAccuracy)
     end
 end --End Function status_change(new,old)
 
