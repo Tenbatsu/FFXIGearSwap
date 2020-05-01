@@ -11,7 +11,8 @@ PhysicalBloodPacts = T{"Poison Nails", --Carbuncle
         "Barracuda Dive", "Tail Whip", "Spinning Dive", --Leviathan
         "Regal Scratch", "Regal Gash", --Cait Sith
         "Moonlit Charge", "Crescent Fang", "Eclipse Bite", --Fenrir
-        "Camisado", "Blindside" --Diabolos'
+        "Camisado", "Blindside", --Diabolos'
+		"Welt", "Roundhouse", "Hysteric Assault" --Siren
 		}
 		
 MagicalBloodPacts = T{"Searing Light", "Meteorite", "Holy Mist", --Carbuncle
@@ -23,10 +24,11 @@ MagicalBloodPacts = T{"Searing Light", "Meteorite", "Holy Mist", --Carbuncle
         "Tidal Wave", "Water II", "Water IV", "Grand Fall", --Leviathan
         "Level ? Holy", --Cait Sith
         "Howling Moon", "Lunar Bay", "Impact", --Fenrir
-        "Ruinous Omen", "Night Terror" --Diabolos, 
+        "Ruinous Omen", "Night Terror", "Nether Blast", --Diabolos,
+		"Tornado II", "Sonic Buffet" --Siren		
 		}
 
-HybridBloodPacts = T{"Flaming Crush", "Nether Blast"}
+HybridBloodPacts = T{"Flaming Crush"}
 
 BuffBloodPacts = T{"Healing Ruby", "Shining Ruby", "Glittering Ruby", "Healing Ruby II",
         "Soothing Ruby", "Pacifying Ruby", --Carbuncle
@@ -39,7 +41,8 @@ BuffBloodPacts = T{"Healing Ruby", "Shining Ruby", "Glittering Ruby", "Healing R
         "Spring Water", "Soothing Current", --Leviathan
         "Altana's Favor", "Raise II", "Reraise II", "Eerie Eye", --Cait Sith
         "Ecliptic Growl", "Ecliptic Howl", "Heavenward Howl", --Fenrir
-        "Noctoshield", "Dream Shroud" --Diabolos
+        "Noctoshield", "Dream Shroud", --Diabolos
+		"Wind's Blessing", "Katabatic Blades", "Chinook" --Siren
 		}
 
 DebuffBloodPacts = T{"Sleepga", "Diamond Storm", --Shiva
@@ -47,16 +50,17 @@ DebuffBloodPacts = T{"Sleepga", "Diamond Storm", --Shiva
         "Slowga", "Tidal Roar", --Leviathan
         "Mewing Lullaby", --Cait Sith
         "Lunar Cry", "Lunar Roar", --Fenrir
-        "Somnolence", "Nightmare", "Ultimate Terror", "Pavor Nocturnus" --Diabolos
+        "Somnolence", "Nightmare", "Ultimate Terror", "Pavor Nocturnus", --Diabolos
+		"Lunatic Voice", "Bitter Elegy" --Siren
 	}
 
 function get_sets()
 
 sets.idle = { -- What to wear when no pet is out
-		main="Gridarvor",
+		main="Nirvana",
 		sub="Oneiros Grip",
-        ammo="Sancus Sachet",
-        head="Beckoner's Horn +1",
+        ammo="Sancus Sachet +1",
+        head="Convoker's Horn +3",
         neck="Caller's Pendant",
         ear1="Evans Earring",
         ear2="Gifted Earring",
@@ -71,18 +75,18 @@ sets.idle = { -- What to wear when no pet is out
         }
     
 	sets.idle.Perpetuation = { --What to wear when there is a pet out
-		main="Gridarvor",
+		main="Nirvana",
 		sub="Oneiros Grip",
-	    ammo="Sancus Sachet",
-        head="Beckoner's Horn +1",
+	    ammo="Sancus Sachet +1",
+        head="Convoker's Horn +3",
         neck="Caller's Pendant",
         ear1="Evans Earring",
         ear2="Gifted Earring",
         body="Shomonjijoe +1",
         hands="Merlinic Dastanas",
-        ring1="Evoker's Ring",
-        ring2="Varar Ring",
-        back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10',}},
+        ring1="Varar Ring +1",
+        ring2="Varar Ring +1",
+        back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10','Pet: "Regen"+5',}},
         waist="Incarnation Sash",
         legs="Assid. Pants +1",
         feet="Apogee Pumps"
@@ -100,10 +104,10 @@ sets.idle = { -- What to wear when no pet is out
 	sets.precast = {}
 	
 	sets.precast.BPDelay = { -- BP minus and Blood Boon
-	    main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}},
+	    main="Nirvana",
 		sub="Oneiros Grip",
-		ammo="Sancus Sachet",
-		head="Con. Horn +1",
+		ammo="Sancus Sachet +1",
+		head="Convoker's Horn +3",
 		body="Con. Doublet +3",
 		hands="Glyphic Bracers +1",
 		legs="Assid. Pants +1",
@@ -113,7 +117,7 @@ sets.idle = { -- What to wear when no pet is out
 		left_ear="Evans Earring",
 		right_ear="Gifted Earring",
 		left_ring="Fervor Ring",
-		right_ring="Varar Ring",
+		right_ring="Varar Ring +1",
 		back="Conveyance Cape"
 		}
     
@@ -129,72 +133,67 @@ sets.idle = { -- What to wear when no pet is out
         ring1="Rahab Ring",
 		ring2="Kishar Ring"
         }
- 
-    
- 
+  
     sets.midcast = {}
 	
     sets.midcast.BPPhysical = {
-		main="Gridarvor",
-		--main="Keraunos",
-		sub="Oneiros Grip",
-		ammo="Sancus Sachet",
+		main="Nirvana",
+		sub="Elan Strap",
+		ammo="Sancus Sachet +1",
 		head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
 		body="Con. Doublet +3",
 		hands="Merlinic Dastanas",
-		legs="Enticer's Pants",
+		legs="Apogee Slacks",
 		feet="Convo. Pigaches +3",
 		neck="Shulmanu Collar",
 		waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Lugalbanda Earring",
-		left_ring="Varar Ring",
-		right_ring="Varar Ring",
-		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10',}}
+		left_ring="Varar Ring +1",
+		right_ring="Varar Ring +1",
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10','Pet: "Regen"+5',}}
     }
 	
     sets.midcast.BPMagical = {
-		main={ name="Grioavolr", augments={'Blood Pact Dmg.+8','Pet: "Mag.Atk.Bns."+17','DMG:+19',}},
-		sub="Oneiros Grip",
-		ammo="Sancus Sachet",
-		head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-		body="Con. Doublet +3",
-		hands="Merlinic Dastanas",
-		legs={ name="Enticer's Pants", augments={'MP+45','Pet: Accuracy+14 Pet: Rng. Acc.+14','Pet: Mag. Acc.+13','Pet: Damage taken -3%',}},
-		feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-		neck="Adad Amulet",
-		waist="Incarnation Sash",
-		left_ear="Gelos Earring",
-		right_ear="Lugalbanda Earring",
-		left_ring="Varar Ring",
-		right_ring="Varar Ring",
-		back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Pet: Haste+10',}}
-    }
-	
-    sets.midcast.BPHybrid = {
-		--main="Gridarvor",
-		main="Keraunos",
-		sub="Oneiros Grip",
-		ammo="Sancus Sachet",
+		main={ name="Grioavolr", augments={'Blood Pact Dmg.+9','Pet: Mag. Acc.+16','Pet: "Mag.Atk.Bns."+22','DMG:+12',}},
+		sub="Elan Strap",
+		ammo="Sancus Sachet +1",
 		head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
 		body="Con. Doublet +3",
 		hands="Merlinic Dastanas",
 		legs="Enticer's Pants",
-		--legs={ name="Enticer's Pants", augments={'MP+45','Pet: Accuracy+14 Pet: Rng. Acc.+14','Pet: Mag. Acc.+13','Pet: Damage taken -3%',}},
+		feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
+		neck="Adad Amulet",
+		waist="Regal Belt",
+		left_ear="Gelos Earring",
+		right_ear="Lugalbanda Earring",
+		left_ring="Varar Ring +1",
+		right_ring="Varar Ring +1",
+		back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Pet: Haste+10','Pet: "Regen"+5',}}
+    }
+	
+    sets.midcast.BPHybrid = {
+		main="Nirvana",
+		sub="Elan Strap",
+		ammo="Sancus Sachet +1",
+		head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
+		body="Con. Doublet +3",
+		hands="Merlinic Dastanas",
+		legs="Apogee Slacks",
 		feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
 		neck="Shulmanu Collar",
 		waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Lugalbanda Earring",
 		left_ring="Speaker's Ring",
-		right_ring="Varar Ring",
-		back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Pet: Haste+10',}}	
+		right_ring="Varar Ring +1",
+		back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Pet: Haste+10','Pet: "Regen"+5',}}	
     }
 	
     sets.midcast.BPBuff = {
-		main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}},
+		main="Nirvana",
 		sub="Vox Grip",
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Beckoner's Horn +1",
 		body="Beck. Doublet +1",
 		hands="Lamassu Mitts +1",
@@ -206,13 +205,13 @@ sets.idle = { -- What to wear when no pet is out
 		right_ear="Gifted Earring",
 		left_ring="Fervor Ring",
 		right_ring="Evoker's Ring",
-		back="Conveyance Cape"
+		back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Pet: Magic Damage+10','Pet: Haste+10','Pet: "Regen"+5',}}
     }
 	
     sets.midcast.BPDebuff = {
-		main={ name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}},
+		main="Nirvana",
 		sub="Vox Grip",
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Beckoner's Horn +1",
 		body="Con. Doublet +3",
 		hands="Lamassu Mitts +1",
@@ -270,6 +269,14 @@ end
 		disable('neck')
 	elseif new == 'Reive Mark' and not bool then
 		enable('neck')
+		aftercast()
+	elseif new == 'Astral Conduit' and bool then
+		windower.add_to_chat(123, "Starting Astral Conduit")
+		equip(sets.midcast.BPPhysical)
+		disable("Main", "Sub", "Range", "Ammo", "Head", "Neck", "Ear1", "Ear2", "Body", "Hands", "Ring1", "Ring2", "Back", "Waist", "Legs", "Feet")
+	elseif new == 'Astral Conduit' and not bool then
+		windower.add_to_chat(123, "Astral Conduit Finished")
+		enable("Main", "Sub", "Range", "Ammo", "Head", "Neck", "Ear1", "Ear2", "Body", "Hands", "Ring1", "Ring2", "Back", "Waist", "Legs", "Feet")
 		aftercast()
 	end
 end

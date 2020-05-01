@@ -1,6 +1,6 @@
 -- DNC
 -- Sets
-send_command('wait 3; input /lockstyleset 12;')
+send_command('wait 3; input /lockstyleset 12; wait 5; input /macro book 5; wait 2; /macro set 1'')
 
 --Steps This sets the types of step we can use
 --steps = { "Quickstep", "Box Step", "Stutter Step", "Feather Step"}
@@ -30,20 +30,21 @@ function get_sets()
 	}
 	sets.mogGarden = {body="Jubilee Shirt", hands="Field Gloves", waist="Field Rope", feet="Field Boots", neck="Field Torque"}
 	--Set for face punching
+	
 	sets.aftercast.TP = {
-		ammo = "Ginsen",
+		ammo = "Yamarang",
 		head = "Dampening Tam",
-		neck = "Combatant's Torque",
+		neck = "Anu Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Adhemar Jacket",
 		hands = "Adhemar Wristbands",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
+		ring1 = "Ilabrat ring",
+		ring2 = "Petrov Ring",
 		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
+		waist = "Kentarch belt +1",
 		legs = "Samnuha Tights",
-		feet = "Herculean Boots"
+		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4',}}
 	}
 	
 	sets.aftercast.HighAccuracy = {
@@ -53,13 +54,13 @@ function get_sets()
 		ear1 = "Digni. Earring",
 		ear2 = "Cessance Earring",
 		body = "Adhemar Jacket",
-		hands = "Maxixi Bangles +2",
+		hands = "Maxixi Bangles +3",
 		ring1 = "Mars's ring",
 		ring2 = "Ilabrat Ring",
 		back = "Senuna's Mantle",
 		waist = "Anguinus belt",
 		legs = "Samnuha Tights",
-		feet = "Herculean Boots"
+		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4',}}
 	}
 	
 	sets.aftercast.hHP = {}
@@ -70,17 +71,17 @@ function get_sets()
 	
 	--Some Job Abilities
 	--Trance
-	sets.precast['Trance'] = {head = "Horos Tiara"}
-	sets.precast['No Foot Rise'] = {body = "Horos Casaque"}
-	sets.precast['Saber Dance'] = {legs = "Horos Tights"}
+	sets.precast['Trance'] = {head = "Horos Tiara +1"}
+	sets.precast['No Foot Rise'] = {body = "Horos Casaque +1"}
+	sets.precast['Saber Dance'] = {legs = "Horos Tights +1"}
 	
 	--Waltz
     --Curing Waltz Targets VIT + Casters CHR
     sets.precast.Waltz = {
-        head = "Horos Tiara",
+        head = "Horos Tiara +1",
     	neck = "Combatant's Torque",
 		ear1 = "Roundel Earring",
-		ear2 = "Delta Earring",
+		--ear2 = "Delta Earring",
 		body = "Maxixi Casaque +1",
 		hands = "Adhemar Wristbands",
 		ring1 = "Asklepian ring",
@@ -98,7 +99,7 @@ function get_sets()
     	ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
-		hands = "Maxixi Bangles +2",
+		hands = "Maxixi Bangles +3",
 		ring1 = "Rajas ring",
 		ring2 = "Epona's Ring",
 		back = "Toetapper Mantle",
@@ -127,7 +128,7 @@ function get_sets()
         neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
-		body = "Horos Casaque",
+		body = "Horos Casaque +1",
 		hands = "Adhemar Wristbands",
 		ring1 = "Rajas ring",
 		ring2 = "Epona's Ring",
@@ -190,12 +191,12 @@ function get_sets()
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
-		hands = "Maxixi Bangles +2",
+		hands = "Maxixi Bangles +3",
 		ring1 = "Rajas ring",
 		ring2 = "Epona's Ring",
 		back = "Toetapper Mantle",
 		waist = "Windbuffet belt +1",
-		legs = "Herculean Trousers",
+		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}}
 		--feet = "Etoile Toeshoes +2"
     }
     --Crit Hit Evasion Down
@@ -205,12 +206,12 @@ function get_sets()
     	ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
-		hands = "Maxixi Bangles +2",
+		hands = "Maxixi Bangles +3",
 		ring1 = "Rajas ring",
 		ring2 = "Epona's Ring",
 		back = "Toetapper Mantle",
 		waist = "Windbuffet belt +1",
-		legs = "Herculean Trousers",
+		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
 		feet = "Maculele Toeshoes"
     }
 	
@@ -221,12 +222,12 @@ function get_sets()
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
 		body = "Maxixi Casaque +1",
-		hands = "Maxixi Bangles +2",
+		hands = "Maxixi Bangles +3",
 		ring1 = "Rajas ring",
 		ring2 = "Epona's Ring",
 		back = "Toetapper Mantle",
 		waist = "Windbuffet belt +1",
-		legs = "Herculean Trousers",
+		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
 		feet = "Maxixi Shoes +1"
     }
 	
@@ -244,36 +245,44 @@ function get_sets()
 		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
-		legs = "Herculean Trousers",
+		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
 		ear1 = "Moonshade Earring",
-		feet = "Lustratio Leggings"}	
+		feet = "Lustratio Leggings"}
+		
     --Evisceration Gravitation/Transfixion DEX 50%
 	sets.precast['Evisceration'] = { 
 		ammo = "Charis Feather",
-		head = "Maculele Tiara +1",
+		head = "Herculean Helm",
 		neck = "Fotia Gorget",
 		body = "Adhemar Jacket",
-		ring1= "Apate Ring",
+		hands = "Mummu Wrists +2",
+		ring1= "Mummu Ring",
 		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
-		legs = "Herculean Trousers",
+		legs = "Lustratio Subligar",
 		ear1 = "Moonshade Earring",
+		ear2 = "Sherida Earring",
 		feet = "Lustratio Leggings"}
+		
     --Rudra's Storm Darkness/Distortion DEX 80%
 	sets.precast['Rudra\'s Storm'] = { 
 		ammo = "Charis Feather",
 		head = "Maculele Tiara +1",
-		hands = "Maxixi Bangles +2",
+		hands = "Maxixi Bangles +3",
 		neck = "Fotia Gorget",
-		body = "Adhemar Jacket",
+		body = "Meg. Cuirie +2",
 		ring1= "Apate Ring",
 		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
-		legs = "Herculean Trousers",
-		ear1 ="Moonshade Earring",
+		legs = "Lustratio Subligar",
+		ear1 = "Moonshade Earring",
+		ear2 = "Ishvara Earring",
 		feet ="Lustratio Leggings"}
+		
+	sets.precast.ClimacticRudras = sets.precast['Rudra\'s Storm']
+	
 	--Pyrrhic Kleos STR 40% DEX40%
 	sets.precast['Pyrrhic Kleos'] = {
 	    ammo = "Charis Feather",
@@ -284,9 +293,10 @@ function get_sets()
 		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
-		legs = "Herculean Trousers",
+		legs = "Samnuha Tights",
 		ear1 = "Moonshade Earring",
 		feet = "Lustratio Leggings"}
+	
 	--Extenerator
 	sets.precast['Extenerator'] = { 
 		ammo = "Charis Feather",
@@ -297,10 +307,11 @@ function get_sets()
 		ring2= "Ilabrat Ring",
 		back = "Senuna's mantle",
 		waist = "Fotia Belt",
-		legs = "Herculean Trousers",
+		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
 		ear1 = "Moonshade Earring",
 		feet = "Lustratio Leggings"}
-    --Elemental WS is weird need some MAB etc.for these
+    
+	--Elemental WS is weird need some MAB etc.for these
 	sets.precast['Aeolian Edge'] = { 
 		ammo = "Charis Feather",
 		head = "Maculele Tiara +1",
@@ -311,15 +322,17 @@ function get_sets()
 		ring1 = "Mephitas's Ring",
 		ring2 = "Acumen Ring",
 		waist = "Fotia Belt",
-		legs = "Herculean Trousers",
+		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
 		ear1 = "Hecate's Earring",
 		ear2 = "Crematio Earring",
 		feet = "Lustratio Leggings"}
+	
 	--Set for Fast Casting Utsusemi
 	sets.precast.FastCast = {
 	--neck="Magoraga Beads",
 	body = "Passion Jacket",
 	hands = "Leyline Gloves",
+	ring1 = "Rahab Ring",
 	ear1 = "Loquac. Earring",
 	ear2 = "Etiolation Earring"
 	}

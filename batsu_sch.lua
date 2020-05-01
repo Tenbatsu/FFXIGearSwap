@@ -1,15 +1,16 @@
 res = require('resources')
-send_command('wait 3; input /lockstyleset 13;')
+-- send_command('wait 3; input /lockstyleset 13;')
 
 modes = {"Standard", "Bursting", "HighAccuracy"}
-curMode = "Standard"
+curMode = "Bursting"
 
 -- Locus Ring Mugen Band
 
 
 function get_sets()
     
-	sets.mogGarden = {body="Jubilee Shirt", hands="Field Gloves", waist="Field Rope", feet="Field Boots", neck="Field Torque"}
+	sets.idle = {}
+	sets.idle.mogGarden = {body="Jubilee Shirt", hands="Field Gloves", waist="Field Rope", feet="Field Boots", neck="Field Torque"}
 	
 	
 	sets.aftercast = {}
@@ -17,22 +18,26 @@ function get_sets()
     sets.aftercast.adoulin = set_combine(sets.idle, {body="Councilor's Garb"})
 	
 	sets.aftercast.Idle = {
+		main = "Akademos",
+		sub = "Oneiros grip",
 		range = "Aureole",
 		head = "Jhakri Coronal +2",
 		neck = "Twilight Torque",
-		ear1 = "Crematio earring",
-		ear2 = "Hermetic earring",
+		ear1 = "Etiolation Earring",
+		ear2 = "Eabani earring",
 		body = "Jhakri robe +2",
 		hands = "Jhakri Cuffs +2",
 		ring1 = "Defending Ring",
 		ring2 = "Vocane Ring",
-		back = "Shadow Mantle",
+		back = "Solemnity Cape",
 		waist = "Refoccilation Stone",
-		legs = "Merlinic Shalwar",
+		legs = "Assid. Pants +1",
 		feet = "Amalric nails"
 	}
 	
 	sets.aftercast.Engaged = {
+		main = "Akademos",
+		sub = "Bloodrain Strap",
 		range = "Aureole",
 		head = "Jhakri Coronal +2",
 		neck = "Combatant's Torque",
@@ -42,9 +47,9 @@ function get_sets()
 		hands = "Jhakri Cuffs +2",
 		ring1 = "Apate Ring",
 		ring2 = "Rajas Ring",
-		back = "Taranus's Cape",
+		back = "Solemnity Cape",
 		waist = "Eschan Stone",
-		legs = "Merlinic Shalwar",
+		legs={ name="Merlinic Shalwar", augments={'"Counter"+2','CHR+9','Quadruple Attack +2','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
 		feet = "Jhakri Pigaches +2"
 	}
 	
@@ -66,7 +71,8 @@ function get_sets()
 	}
 	
 	--Job Abilities
-	sets.precast.JA = {}
+	sets.precast['Enlightenment'] = {body ='Pedagogy Gown +1'}
+    sets.precast['Tabula Rasa'] = {legs ='Pedagogy Pants +1'}
 	
 	--Set for Fast Casting
 	sets.precast.FastCast = {
@@ -85,50 +91,53 @@ function get_sets()
 	sets.midcast = {}
 	
 	sets.midcast.mACC = {
+		main = "Akademos",
+		sub = "Enki Strap",
 		range = "Aureole",
 		head = "Jhakri Coronal +2",
 		neck = "Erra Pendant",
 		ear1 = "Digni. Earring",
 		ear2 = "Gwati Earring",
-		body = "Spaekona's Coat +2",
+		body = "Jhakri Robe +2",
 		hands = "Jhakri Cuffs +2",
 		ring1 = "Rahab Ring",
 		ring2 = "Acumen Ring",
-		back = "Taranus's Cape",
+		back = "Bookworm's Cape",
 		waist = "Luminary Sash",
 		legs = "Jhakri slops +2",
 		feet = "Jhakri pigaches +2"
 	}
 	
 	sets.midcast.Bursting = {
-		main={ name="Lathi", augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15',}},
+		main="Akademos",
 		sub="Enki Strap",
 		range="Aureole",
 		head="Merlinic Hood",
-		body="Spaekona's Coat +2",
-		hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-		legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+12 "Mag.Atk.Bns."+12','Magic burst dmg.+10%','CHR+3','"Mag.Atk.Bns."+10',}},
-		feet="Jhakri Pigaches +2",
-		neck="Mizu. Kubikazari",
-		waist="Hachirin-no-obi",
-		left_ear="Crematio Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Shiva Ring",
-		right_ring="Mujin Band",
-		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}},
+		body="Jhakri Robe +2",
+		hands = { name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+		legs = { name="Merlinic Shalwar", augments={'Mag. Acc.+12 "Mag.Atk.Bns."+12','Magic burst dmg.+10%','CHR+3','"Mag.Atk.Bns."+10',}},
+		feet = "Jhakri Pigaches +2",
+		neck = "Mizu. Kubikazari",
+		waist = "Hachirin-no-obi",
+		left_ear = "Crematio Earring",
+		right_ear = "Friomisi Earring",
+		left_ring = "Locus Ring",
+		right_ring = "Mujin Band",
+		back = "Bookworm's Cape"
 	}
 	
 	sets.midcast.Standard = {
+		main = "Akademos",
 		range = "Aureole",
 		head = "Jhakri Coronal +2",
 		neck = "Sanctity Necklace",
 		ear1 = "Crematio Earring",
 		ear2 = "Friomisi Earring",
-		body = "Spaekona's Coat +2",
+		body = "Jhakri Robe +2",
 		hands = "Jhakri Cuffs +2",
 		ring1 = "Shiva Ring",
 		ring2 = "Shiva Ring",
-		back = "Taranus's Cape",
+		back = "Bookworm's Cape",
 		waist = "Refoccilation Stone",
 		legs = "Merlinic Shalwar",
 		feet = "Amalric Nails"
@@ -136,7 +145,7 @@ function get_sets()
 	
 	sets.midcast.Dark = {
 		range = "Aureole",
-		head = "Pixie Hairpin +1",
+		head = "Jhakri Coronal +2",
 		neck = "Erra Pendant",
 		ear1 = "Crematio Earring",
 		ear2 = "Hirudinea Earring",
@@ -144,29 +153,31 @@ function get_sets()
 		hands = "Jhakri Cuffs +2",
 		ring1 = "Evanescence Ring",
 		ring2 = "Rahab Ring",
-		back = "Taranus's Cape",
+		back = "Bookworm's Cape",
 		waist = "Luminary Sash",
 		legs = "Jhakri slops +2",
 		feet = "Jhakri pigaches +2"
 	}
 	
-	sets.midcast.Death = {
-		main={ name="Lathi", augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15',}},
-		sub="Enki Strap",
-		range="Aureole",
-		head="Pixie Hairpin +1",
-		body="Spaekona's Coat +2",
-		hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-		legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+12 "Mag.Atk.Bns."+12','Magic burst dmg.+10%','CHR+3','"Mag.Atk.Bns."+10',}},
-		feet="Jhakri Pigaches +2",
-		neck="Mizu. Kubikazari",
-		waist="Hachirin-no-obi",
-		left_ear="Crematio Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Shiva Ring",
-		right_ring="Mujin Band",
-		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}},
+	sets.midcast.Cures = {
+		main = "Serenity",
+		sub = "Enki Strap",
+		range = "Aureole",
+		head = "Jhakri Coronal +2",
+		neck = "Erra Pendant",
+		ear1 = "Digni. Earring",
+		ear2 = "Gwati Earring",
+		body = "Jhakri Robe +2",
+		hands = "Telchine Gloves",
+		ring1 = "Rahab Ring",
+		ring2 = "Kunaji Ring",
+		back = "Solemnity Cape",
+		waist = "Luminary Sash",
+		legs = "Jhakri slops +2",
+		feet = "Jhakri pigaches +2"	
 	}
+	
+	sets.midcast.Regens = set_combine(sets.midcast.Cures, {main="Coeus", back="Lugh's Cape"})
 	
 end --End Function get_sets
 
@@ -180,7 +191,6 @@ function precast(spell) --Equip Items based on Abilities or Spells
 		equip(sets.precast.WS)
 	end --end if
 end --end function precast
-
 
 function midcast(spell)
 	if sets.midcast[spell.english] then
@@ -197,9 +207,8 @@ function midcast(spell)
 			--windower.add_to_chat(123, "High Accuracy")
 			equip(sets.midcast.mACC)
 		end --end if
-	elseif spell.english == "Death" then
-		windower.add_to_chat(123, "Casting Death")
-		equip(sets.midcast.Death)
+	--elseif spell.english == "Death" then
+		--equip(sets.midcast.Bursting)
 	elseif spell.skill == "Dark Magic" then
 		equip(sets.midcast.Dark)
 	else
@@ -209,7 +218,7 @@ end --end function midcast
 
 function aftercast(spell)
     if player.status =='Engaged' then
-        equip(sets.aftercast.TP)
+        equip(sets.aftercast.Engaged)
 	--elseif player.status == 'Casting' then
 		--midcast(spell)
     else

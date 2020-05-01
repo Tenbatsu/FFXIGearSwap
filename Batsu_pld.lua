@@ -22,7 +22,7 @@ CurrentMode = 1
                 ring2 = "Vocane Ring",
                 back = "Weard Mantle",
                 waist = "Flume Belt +1",
-                legs = "Carmine Cuisses",
+                legs = "Carmine Cuisses +1",
                 feet = "Odyssean Greaves",
 				ammo = "Angha Gem"
         }

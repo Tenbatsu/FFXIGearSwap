@@ -18,7 +18,7 @@ function get_sets()
 		neck = "Twilight Torque",
 		waist = "Flume Belt +1",
 		left_ear = "Cessance Earring",
-		right_ear = "Brutal Earring",
+		right_ear = "Digni. Earring",
 		ring1 = "Defending Ring",
         ring2 = "Vocane Ring",
 		back = "Shadow Mantle"
@@ -27,7 +27,7 @@ function get_sets()
 	--Set for face punching
 	sets.aftercast.TP = {
 		--main = "Umaru",
-		--sub = "Bloodrain Strap"
+		--sub = "Bloodrain Strap",
 		ammo = "Ginsen",
 		head = "Flam. Zucchetto +1",
 		body = "Flamma Korazin +1",
@@ -37,9 +37,9 @@ function get_sets()
 		neck = "Combatant's Torque",
 		waist = "Windbuffet Belt +1",
 		left_ear = "Cessance Earring",
-		right_ear = "Brutal Earring",
+		right_ear = "Digni. Earring",
 		left_ring = "Ilabrat Ring",
-		right_ring = "Rajas Ring",
+		right_ring = "Apate Ring",
 		back = "Takaha Mantle"
 	}
 	
@@ -87,6 +87,7 @@ function get_sets()
 	--Finally some weaponskill action
 	--Tachi: Yukikaze 75% STR
 	sets.precast['Tachi: Yukikaze'] = {
+		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
@@ -97,6 +98,7 @@ function get_sets()
 		
 	--Tachi Gekko 80% STR
 	sets.precast['Tachi: Gekko'] = {
+		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
@@ -106,6 +108,7 @@ function get_sets()
 		
 	-- Tachi: Kasha 75% STR
 	sets.precast['Tachi: Kasha'] = {
+		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
@@ -118,6 +121,7 @@ function get_sets()
 		
 	--Tachi: Rana 50% STR
 	sets.precast['Tachi: Rana'] = {
+		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
@@ -130,6 +134,7 @@ function get_sets()
 		
 	--Tachi: Shoha 85% STR
 	sets.precast['Tachi: Shoha'] = {
+		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
@@ -142,6 +147,7 @@ function get_sets()
 		
 	--Tachi: Fudo 80% STR
 	sets.precast['Tachi: Fudo'] = {
+		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",
@@ -153,6 +159,7 @@ function get_sets()
 		ammo = "Knobkierrie"}
 	
 	sets.precast.WS = {
+		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
 		ear1 = "Moonshade Earring",
 		ear2 = "Bladeborn Earring",

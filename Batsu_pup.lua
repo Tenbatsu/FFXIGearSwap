@@ -9,8 +9,8 @@ function get_sets()
     add_to_chat(262,"Puppetmaster Control Panel Loaded")
     add_to_chat(160,"F9 Toggles Idle Mode (Default PetDT), Ctrl+F9 Toggles Engaged Mode (Default Master)")
     add_to_chat(160,"F10 Toggles Autodeploy (Default On), Ctrl+F10 Toggles Magic Mode (Default Off)")
-    add_to_chat(160,"Ctrl+Alt+F10 Toggles Auto Maneuvers (Default Off), Ctrl+Alt+F9 Toggles Maneuvers (Default FLL)")
-    add_to_chat(036,"Alt+F10 Toggles Main Weapon Lock (Default Enabled)")
+    add_to_chat(160,"Ctrl+Alt+F10 Toggles Auto Maneuvers (Default Off), Ctrl+Alt+F9 Toggles Maneuvers (Default LWW)")
+    add_to_chat(036,"Alt+F10 Toggles Main Weapon Lock (Default Unlocked)")
     add_to_chat(036,"Delay tolerance is currently " ..delaytol.. "s.  Adjust if necessary (See comment in lua)")
 
     send_command('bind f9 gs c toggle idle set')
@@ -23,19 +23,30 @@ function get_sets()
     send_command('bind ^f11 gs c puphelp')
 
     idle_sets = {'PetDT', 'PetC', 'Mage', 'Master'}
-	idle_index_max = 4
+	idle_index_max = table.getn(idle_sets)
+	--Set Default Idle Index
     idle_index = 2
 
     combat_sets = {'PetDT', 'PetC', 'Mage', 'Master'}
-	combat_index_max = 4
+	combat_index_max = table.getn(combat_sets)
+	--Set Default Combat Index
     combat_index = 2
+	
+	maneuver_sets = {
+		{"Melee","Fire Maneuver","Light Maneuver","Light Maneuver"},
+		{"Ranger","Wind Maneuver","Wind Maneuver","Light Maneuver"},
+		{"Tank","Fire Maneuver","Light Maneuver","Earth Maneuver"},
+		{"Healer","Dark Maneuver","Light Maneuver","Ice Maneuver"},
+		{"Nukes","Dark Maneuver","Ice Maneuver","Ice Maneuver"}
+	}
+	automantype = 2
+	maneuver_index = 2
+	automan = false
     
-    autodep = 1
+    autodep = true
     pettpok = 1
-    magicmode = 1
-    mainw = 1
-    automan = 1
-    automantype = 1
+    magicmode = false
+    mainw = 1    
 
     --Init timer for skillswap
     specpet = T{}
@@ -53,8 +64,7 @@ function get_sets()
    spells.PUPNuke = S{'Fire', 'Fire II', 'Fire III', 'Fire IV', 'Fire V', 'Thunder', 'Thunder II', 'Thunder III', 'Thunder IV', 'Thunder V', 'Blizzard', 'Blizzard II', 'Blizzard III', 'Blizzard IV', 'Blizzard V', 'Water', 'Water II', 'Water III', 'Water IV', 'Water V', 'Aero', 'Aero II', 'Aero III', 'Aero IV', 'Aero V', 'Stone', 'Stone II', 'Stone III', 'Stone IV', 'Stone V'}
    spells.Man = S{'Fire Maneuver', 'Water Maneuver', 'Thunder Maneuver', 'Wind Maneuver', 'Light Maneuver', 'Dark Maneuver', 'Earth Maneuver', 'Ice Maneuver'}
    
-   sets.idle = {
-    }
+   sets.idle = {}
 	
 	sets.idle.Master = {
 		main = "Denouements",
@@ -86,10 +96,8 @@ function get_sets()
         --head = "Anwig Salade", -- 10% DT
         --body = "Rao Togi +1", -- 4% DT
         back = "Visucius's Mantle",
-		--ear1 = "Cessance Earring",
-		--ear2 = "Dignitary's Earring"
-        ear1 = "Handler's Earring", -- 1% DT
-        ear2 = "Handler's Earring +1" -- 3% DT
+        ear1 = "Enmerkar Earring",
+        ear2 = "Handler's Earring +1",
         --ring1 = "Thurandaut Ring", -- 3% DT
         --ring2 = "Overbearing Ring",
     }
@@ -109,11 +117,11 @@ function get_sets()
         --Gear for puppet damage
         main = "Ohtas",
         head = "Tali'ah Turban +2",
-        body = "Pitre Tobe +1",
+        body = "Pitre Tobe +3",
         waist = "Incarnation Sash",
         neck = "Shulmanu Collar",
-        --ear1 = "Burana Earring",
-        --ear2 = "Enmerkar Earring",
+        ear1 = "Enmerkar Earring",
+        ear2 = "Handler's Earring +1",
         hands = "Tali'ah Gages +2",
         legs={ name="Herculean Trousers", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Store TP"+7','Pet: INT+2',}},
 		feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+17','Pet: "Store TP"+10','Pet: INT+8','Pet: Attack+9 Pet: Rng.Atk.+9',}},
@@ -153,22 +161,25 @@ function get_sets()
         --ring2 = "Overbearing Ring",
         --hands = "Karagoz Guanti +1",
     })
+	
     sets.rangedwstank = set_combine(sets.idle.PetDT, {
         -- Gear for ranged tank puppet Weaponskills.  Wiull auto swap at 970 TP
         head = "Karagoz Capello",
-        body = "Pitre Tobe +1",
+        body = "Pitre Tobe +3",
         back = "Dispersal Mantle"
         --hands = "Karagoz Guanti +1",
         --feet = "Naga Kyahan",
         --ring2 = "Overbearing Ring",
         --legs = "Karagoz Pantaloni +1",
     })
+	
     sets.petskill = {
         -- Gear to enhance puppet skills.  USed for magic mostly.
         --legs = "Karagoz Pantaloni +1",
         --feet = "Naga Kyahan",
         --main= "Gnafron's Adargas",
     }
+	
     sets.idle.Mage = set_combine(sets.idle.PetC, {
     -- Gear for Mage Puppet
     --main = "Kenkonken",
@@ -178,29 +189,32 @@ function get_sets()
     --feet="Foire Babouches +3",
     legs="Tali'ah Seraweels +2",
     neck="Adad Amulet",
-    --ear1="Burana Earring",
-    --ear2="Enmerkar Earring",
+    --ear2="Burana Earring",
+    ear1="Enmerkar Earring",
     back = "Visucius's Mantle"
     --ring2="Tali'ah Ring",
 	})
  
     sets.JA = {}
 	
-    sets.JA['Overdrive'] = {body = "Pitre Tobe +1"}
+    sets.JA['Overdrive'] = {
+		body = "Pitre Tobe +3"}
 	
     sets.JA['Repair'] = {
         ear1="Guignol Earring",
         feet="Foire Babouches +1",
      }
+	 
     sets.JA['Maintenence'] = {
         ear1="Guignol Earring",
         feet="Foire Babouches +1",
     }
 	
-    sets.JA['Tactical Switch'] = {feet = "Karagoz Scarpe"}
-        sets.precast = {}
+    sets.JA['Tactical Switch'] = {
+		feet = "Karagoz Scarpe"}
 	
- 
+	sets.precast = {}
+	 
 	sets.resting = set_combine(sets.idle, {
 	})
     
@@ -219,7 +233,7 @@ function get_sets()
     }
     
     sets.combat.Master  = set_combine(sets.combat, {
-		main = "Denouements",
+		--main = "Denouements",
 		head={ name="Herculean Helm", augments={'Accuracy+23 Attack+23','"Dual Wield"+2','CHR+4','Accuracy+1',}},
 		body={ name="Herculean Vest", augments={'"Triple Atk."+4','Accuracy+11',}},
 		hands="Tali'ah Gages +2",
@@ -235,6 +249,10 @@ function get_sets()
 	})
 	
     sets.combat.PetDT = set_combine(sets.idle.PetDT, {
+		hands = "Rao Kote",
+		legs = "Foire Churidars +2",
+		ear1 = "Enmerkar Earring",
+        ear2 = "Handler's Earring +1"
     })
 	
     sets.combat.PetC = set_combine(sets.idle.PetC, {
@@ -249,11 +267,10 @@ function get_sets()
         hands="foire dastanas +2"
         --body="Karagoz Farsetto",
         --ear1="Burana Earring",
-
     }
 
-
     sets.midcast ={}
+	
     sets.midcast.PetCure  ={
         --Gear for Puppet Healing
         --main = "Tinhaspa",
@@ -268,6 +285,7 @@ function get_sets()
         --back={ name="Visucius's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: Haste+10',}},
         --ring2="Tali'ah Ring",
     }
+	
     sets.midcast.PetNuke  ={
         -- Gear for Puppet Nuking
         --main = "Tinhaspa",
@@ -282,8 +300,8 @@ function get_sets()
         --back = { name="Visucius's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','Pet: Haste+10',}},
         --ring2 = "Tali'ah Ring",
     }
+	
     -- WS sets
- 
     sets.WS = {
     	head={ name="Herculean Helm", augments={'Accuracy+23 Attack+23','"Dual Wield"+2','CHR+4','Accuracy+1',}},
 		body={ name="Herculean Vest", augments={'"Triple Atk."+4','Accuracy+11',}},
@@ -320,8 +338,7 @@ function get_sets()
 	
 	sets.WS['Tornado Kick'] = set_combine(sets.WS, {
     })
-     
-    sets.lockstyle = {}
+	
  	send_command('wait 4;input /macro book 13;wait 1;input /lockstyleset 16;wait 5;input /macro set 1')
 --     disable('main','sub')
 end
@@ -380,57 +397,57 @@ function aftercast(spell)
     if pet_midaction() then
         return
     end
-    if buffactive['Aftermath: Lv.3'] or mainw == 2 then
-        disable('main','sub')
-    else
-        enable('main','sub')
-    end
+	
     if player.status =='Engaged' then
         equip(sets.combat[combat_sets[combat_index]])
---    send_command('@input /dance motion')
-    else
+    elseif player.status == 'Idle' then
         equip(sets.idle[idle_sets[idle_index]])
-  --      send_command('@input /dance motion')
     end
 end
  
 
 function pet_midcast(spell)
-    if magicmode == 2 then
-    if string.find(spell.english,'Cur') then
-        equip(sets.midcast.PetCure)
+    if magicmode == true then
+		if string.find(spell.english,'Cur') then
+			equip(sets.midcast.PetCure)
         elseif sets.midcast.PetNuke and spells.PUPNuke:contains(spell.name) then
-         equip(sets.midcast.PetNuke)
+			equip(sets.midcast.PetNuke)
          end
-    disable('main','head','neck','lear','rear','body','hands','lring','rring','waist','legs','feet','back')
-        end
-    end
+		disable('main','head','neck','lear','rear','body','hands','lring','rring','waist','legs','feet','back')
+	end
+end
  
 function pet_aftercast(spell)
-        if magicmode == 2 then
-        enable('main','head','neck','lear','rear','body','hands','lring','rring','waist','legs','feet','back')
-end
-        if buffactive['Aftermath: Lv.3'] or mainw == 2 then
-            disable('main','sub')
-        else
-            enable('main','sub')
-        end
-        aftercast()
+	if magicmode == true then
+		enable('main','head','neck','lear','rear','body','hands','lring','rring','waist','legs','feet','back')
+	end
+	aftercast()
 end
 
 function status_change(new,old)
 	if new == 'Idle' then
-	add_to_chat(155,"Idle index is " ..idle_index.. ".")
+		add_to_chat(155,"Idle index is " ..idle_sets[idle_index].. ".")
 		equip(sets.idle[idle_sets[idle_index]])
     elseif new == 'Resting' then
         equip(sets.resting)
     elseif new == 'Engaged' then
-	add_to_chat(155,"Combat index is " ..combat_index.. ".")
-      equip(sets.combat[combat_sets[combat_index]])
-		if autodep ==1 then
+		add_to_chat(155,"Combat index is " ..combat_sets[combat_index].. ".")
+		equip(sets.combat[combat_sets[combat_index]])
+		if autodep == true then
             send_command('@input /pet Deploy <t>')
-            end
-		end
+        end
+	end
+end
+
+--Helper function to count duplicate maneuvers if using automaneuvers
+function maneuver_tally(t,s)
+  local freq = 0
+  for _, v in ipairs(t) do
+    if v == s then
+		freq = freq + 1
+	end
+  end
+  return freq
 end
 
 windower.register_event('action', function(act)
@@ -444,22 +461,23 @@ windower.register_event('action', function(act)
     if pet.status =='Engaged' then
         if pet.tp and pet.tp > 950 then
             if pettpok == 1 then
-                if combat_index == 3 or idle_index == 2 then
+                if combat_index == 2 or idle_index == 2 then
                     --Combat Set Weaponskills
                     pettpok = 2
                     if pet.frame == 'Valoredge Frame' then
-                        --Bonecrusher set goes here
-                        if buffactive['Thunder Maneuver'] then
+                        if buffactive['Wind Maneuver'] then
+						--If wind maneuver usually means ranger
                             equip(sets.rangedws)    
                         else    
                             equip(sets.bone)
                         end
-                        else
-                        --Ranged WS set goes here
-                        equip(sets.rangedws)
+                    elseif pet.frame == 'Sharpshot Frame' then
+						equip(sets.rangedws)
+					else	
+						--just default to ranged ws because why not
+						equip(sets.rangedws)
                     end
-            
-                elseif combat_index == 2 or idle_index == 1 then
+                elseif combat_index == 1 or idle_index == 1 then
                     --Tank Set Weaponskills for Increased Hate
                     if pet.tp > 950 then
                     pettpok = 2
@@ -467,18 +485,18 @@ windower.register_event('action', function(act)
                         if pet.frame == 'Valoredge Frame' then
                             --Bonecrusher set goes here
                             equip(sets.bonetank)
-                        else
-                            --Ranged WS set goes here
+                        elseif pet.frame == 'Sharpshot Frame' then
+							equip(sets.rangedwstank)
+						else
                             equip(sets.rangedwstank)
                         end
                     end
                 end
-            end
-            
+            end   
         elseif pet.tp and pet.tp < 900 then
             if pettpok == 2 then
-            pettpok = 1
-            aftercast()    
+				pettpok = 1
+				aftercast()    
             end
         end     
         
@@ -562,42 +580,30 @@ windower.register_event('action', function(act)
             end
         end    
     end
---Automated stuff for Kev
-if automan == 2 and pet.isvalid and not midaction() then
-    if buffactive['Overload'] and windower.ffxi.get_ability_recasts()[114] == 0 then
-        send_command('@input /ja "Cooldown" <me>')
-    end
-   if windower.ffxi.get_ability_recasts()[210] == 0 then
-    if automantype == 1 then
-        --Standard Tank/Melee Maneuvers 
-            if not buffactive['Fire Maneuver'] then
-                send_command('@input /ja "Fire Maneuver" <me>')
-            elseif not buffactive['Light Maneuver'] or buffactive['Light Maneuver'] == 1 then
-                send_command('@input /ja "Light Maneuver" <me>')
-            end
-        --Standard Ranger Maneuvers
-    elseif automantype == 2 then
-    
-        if not buffactive['Fire Maneuver'] or buffactive['Fire Maneuver'] == 1 then
-            send_command('@input /ja "Fire Maneuver" <me>')
-        elseif not buffactive['Light Maneuver'] then
-            send_command('@input /ja "Light Maneuver" <me>')
-    end
-        --Standard Supertank Maneuvers
-    elseif automantype == 3 then
-    
-        if not buffactive['Fire Maneuver'] then
-            send_command('@input /ja "Fire Maneuver" <me>')
-        
-        elseif not buffactive['Light Maneuver'] then
-            send_command('@input /ja "Light Maneuver" <me>')
-        
-        elseif not buffactive['Earth Maneuver'] then
-            send_command('@input /ja "Earth Maneuver" <me>')
-        end
-    end
-end
-end
+	
+	--Automated stuff for Kev
+	if automan == true and pet.isvalid and not midaction() then
+		if buffactive['Overload'] and windower.ffxi.get_ability_recasts()[114] == 0 then
+			send_command('@input /ja "Cooldown" <me>')
+		end
+		if windower.ffxi.get_ability_recasts()[210] == 0 then
+			add_to_chat(155,"Automaneuver set is:" ..maneuver_sets[automantype][1].. ".")
+			if not buffactive[maneuver_sets[automantype][maneuver_index]] or buffactive[maneuver_sets[automantype][maneuver_index]] < maneuver_tally(maneuver_sets[automantype],maneuver_sets[automantype][maneuver_index]) then
+				--If the maneuver isn't active at all, or we have less than the total number of maneuvers then use the maneuver.
+				send_command('@input /ja "'..maneuver_sets[automantype][maneuver_index]..'" <me>')
+				--Head over to buff change to see if we put the maneuver on and increment
+				-- if buffactive[maneuver_sets[automantype][maneuver_index]] then
+					-- maneuver_index = maneuver_index + 1
+					--Make sure we didn't walk off the map
+					-- if maneuver_index > table.getn(maneuver_sets[automantype]) then
+						-- maneuver_index = 2
+						--since we're just counting table elements if we wanted to replicate a maneuver
+						--we could probably just have a maneuver set of 2 and go from there
+					-- end
+				-- end		
+			end
+		end
+	end
 end)
 
 function self_command(command)
@@ -612,7 +618,7 @@ function self_command(command)
         if combat_index > combat_index_max then
             combat_index = 1
         end
-        add_to_chat(063,'Combat -- '..combat_sets[idle_index])
+        add_to_chat(063,'Combat -- '..combat_sets[combat_index])
     elseif command == 'toggle autodeploy' then
        if autodep == 1 then
            autodep = 2
@@ -640,8 +646,8 @@ function self_command(command)
             add_to_chat(121,'Main Weapon Unlocked')
       end 
     elseif command == 'toggle automan' then
-        if automan == 1 then
-            automan = 2
+        if automan == false then
+            automan = true
             add_to_chat(121,'Automatic Maneuvers Enabled')
         elseif automan == 2 then
             automan = 1

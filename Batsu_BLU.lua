@@ -3,7 +3,6 @@ map = require('BLUSpellMap')
 -- Sets
 
 send_command('wait 3; input /lockstyleset 2;')
-
 	
 disable('main','sub')
 
@@ -16,23 +15,24 @@ function get_sets()
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Ethereal Earring",
-        body="Jhakri Robe +1",
+        body="Jhakri Robe +2",
         hands="Adhemar Wristbands",
         ring1="Vocane Ring",
         ring2="Defending Ring",
 		--back="Mecisto. Mantle",
         back="Shadow Mantle",
         waist="Flume Belt +1",
-        legs="Carmine Cuisses",
-        feet="Herculean Boots"
-    }
+        legs="Carmine Cuisses +1",
+        feet="Herculean Boots"}
+		
 	sets.idle.reive = set_combine(sets.idle, {neck="Adoulin's Refuge +1"})
     sets.idle.adoulin = set_combine(sets.idle, {body="Councilor's Garb"})
     sets.idle.diffusion = set_combine(sets.idle, {feet="Luhlaza Charuqs"})
 	sets.idle.mogGarden = set_combine(sets.idle, {body="Jubilee Shirt", hands="Field Gloves", waist="Field Rope", feet="Field Boots", neck="Field Torque"})
 	
 	sets.precast = {}
-    sets.precast.FC = {
+    
+	sets.precast.FC = {
 		ear1="Etiolation Earring",
         ear2="Loquac. Earring",
         body="Samnuha Coat",
@@ -43,8 +43,7 @@ function get_sets()
         legs="Lengo Pants",
         ring1="Rahab Ring",
 		ring2="Kishar Ring",
-		feet="Amalric Nails"
-        }
+		feet="Amalric Nails"}
  
     sets.resting = {}
  
@@ -61,8 +60,7 @@ function get_sets()
         back="Cornflower Cape",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
-        feet="Herculean Boots"
-    }
+        feet="Herculean Boots"}
     
     -- JA sets
     sets.JA = {}
@@ -76,7 +74,7 @@ function get_sets()
         ear1="Steelflash Earring",
         ear2="Moonshade Earring",
         body="Rawhide Vest",
-        hands="Jhakri Cuffs +1",
+        hands="Jhakri Cuffs +2",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
@@ -110,19 +108,19 @@ function get_sets()
         feet="Herculean Boots"
     })
 	sets["Magical"] = set_combine(sets["Blue Skill"], {
-        head="Jhakri Coronal +1",
+        head="Jhakri Coronal +2",
         ear1="Crematio Earring",
         ear2="Hecate's Earring",
         ring1="Acumen Ring",
         ring2="Rahab Ring",
-        legs="Jhakri Slops +1",
+        legs="Jhakri Slops +2",
         neck="Sanctity Necklace",
-        feet="Jhakri Pigaches +1",
-        gloves="Jhakri Cuffs +1",
+        feet="Jhakri Pigaches +2",
+        hands="Jhakri Cuffs +2",
         back="Cornflower Cape",
         --ammo="Ghastly Tathlum +1",
         waist="Eschan Stone",
-        body="Jhakri robe +1"
+        body="Jhakri robe +2"
     })
 	
 	sets["Curing"] = set_combine(sets["Blue Skill"], {hands="Telchine Gloves"})
@@ -131,7 +129,7 @@ function get_sets()
         body="Samnuha Coat",
         hands="Telchine Gloves",
         feet="Herculean Boots",
-        legs="Carmine Cuisses",
+        legs="Carmine Cuisses +1",
         --waist="Ocean sash",
         neck="Dualism Collar +1",
         ring1="Meridian Ring",
@@ -143,11 +141,11 @@ function get_sets()
 	sets["Debuffs"] = set_combine(sets["Blue Skill"], {})
 	sets["Breath"] = set_combine(sets["Blue Skill"], {
 		ammo="Mavi Tathlum",
-		head="Jhakri Coronal +1",
+		head="Jhakri Coronal +2",
         body="Samnuha Coat",
         hands="Leyline Gloves",
         --feet="Carmine Greaves",
-        legs="Carmine Cuisses",
+        legs="Carmine Cuisses +1",
         --waist="Ocean sash",
         neck="Dualism Collar +1"   
 	})
@@ -172,7 +170,7 @@ function get_sets()
 	sets["MChr"] = set_combine(sets["Magical"], {})
 	sets["MVit"] = set_combine(sets["Magical"], {})
 	sets["MStrDex"] = set_combine(sets["Magical"], {})
-	sets["MagicalDark"] = set_combine(sets["Magical"], {neck="Erra Pendant", ring2="Evanescence Ring"}) --{head="Pixie hairpin +1"})
+	sets["MagicalDark"] = set_combine(sets["Magical"], {neck="Erra Pendant", ring2="Evanescence Ring", head="Pixie Hairpin +1"})
     
 end
 
