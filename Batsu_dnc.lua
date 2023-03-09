@@ -1,11 +1,11 @@
 -- DNC
 -- Sets
-send_command('wait 3; input /lockstyleset 12; wait 5; input /macro book 5; wait 2; /macro set 1'')
+send_command('wait 3; input /lockstyleset 12; wait 5; input /macro book 5; wait 2; /macro set 1')
 
 --Steps This sets the types of step we can use
 --steps = { "Quickstep", "Box Step", "Stutter Step", "Feather Step"}
 --steps = { "Quickstep", "Feather Step", "Stutter Step"}
-steps = { "Box Step", "Quickstep"}
+steps = { "Box Step", "Quickstep", "Stutter Step", "Feather Step"}
 step_index = 1
 
 function get_sets()
@@ -19,12 +19,12 @@ function get_sets()
 		neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
 		ear2 = "Cessance Earring",
-		body = "Adhemar Jacket",
+		body = "Ashera Harness",
 		hands = "Adhemar Wristbands",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
+		ring1 = "Defending Ring",
+		ring2 = "Vocane Ring +1",
 		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
+		waist = "Flume Belt +1",
 		legs = "Samnuha Tights",
 		feet = "Skd. Jambeaux +1"
 	}
@@ -34,17 +34,17 @@ function get_sets()
 	sets.aftercast.TP = {
 		ammo = "Yamarang",
 		head = "Dampening Tam",
-		neck = "Anu Torque",
+		neck = "Combatant's Torque",
 		ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Adhemar Jacket",
+		ear2 = "Telos Earring",
+		body = "Horos Casaque +3",
 		hands = "Adhemar Wristbands",
 		ring1 = "Ilabrat ring",
 		ring2 = "Petrov Ring",
 		back = "Toetapper Mantle",
-		waist = "Kentarch belt +1",
+		waist = "Windbuffet Belt +1",
 		legs = "Samnuha Tights",
-		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4',}}
+		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4'}}
 	}
 	
 	sets.aftercast.HighAccuracy = {
@@ -53,7 +53,7 @@ function get_sets()
 		neck = "Combatant's Torque",
 		ear1 = "Digni. Earring",
 		ear2 = "Cessance Earring",
-		body = "Adhemar Jacket",
+		body = "Ashera Harness",
 		hands = "Maxixi Bangles +3",
 		ring1 = "Mars's ring",
 		ring2 = "Ilabrat Ring",
@@ -72,249 +72,134 @@ function get_sets()
 	--Some Job Abilities
 	--Trance
 	sets.precast['Trance'] = {head = "Horos Tiara +1"}
-	sets.precast['No Foot Rise'] = {body = "Horos Casaque +1"}
-	sets.precast['Saber Dance'] = {legs = "Horos Tights +1"}
+	sets.precast['No Foot Rise'] = {body = "Horos Casaque +3"}
+	sets.precast['Saber Dance'] = {legs = "Horos Tights +3"}
 	
 	--Waltz
     --Curing Waltz Targets VIT + Casters CHR
     sets.precast.Waltz = {
         head = "Horos Tiara +1",
-    	neck = "Combatant's Torque",
+    	neck = "Dualism Collar +1",
 		ear1 = "Roundel Earring",
-		--ear2 = "Delta Earring",
-		body = "Maxixi Casaque +1",
-		hands = "Adhemar Wristbands",
-		ring1 = "Asklepian ring",
-		ring2 = "Epona's Ring",
+		ear2 = "Handler's Earring +1",
+		body = "Maxixi Casaque +2",
+		hands = "Maxixi Bangles +3",
+		ring1 = "Mummu ring",
+		ring2 = "Asklepian Ring",
 		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-        legs = "Maxixi Tights +1",
-		feet = "Maxixi Shoes +1"
+		--waist = "Windbuffet belt +1",
+        legs = "Nyame Flanchard",
+		feet = "Maxixi Toe Shoes +2"
     }
 		
 	--Flourishes
     sets.precast.Flourish = {
-        head = "Maxixi Tiara +1",
+        head = "Nyame Helm",
         neck = "Combatant's Torque",
-    	ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Maxixi Casaque +1",
+    	ear1 = "Digni. Earring",
+		ear2 = "Telos Earring",
+		body = "Horos Casaque +3",
 		hands = "Maxixi Bangles +3",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
+		ring1 = "Ilabrat ring",
+		ring2 = "Mummu Ring",
 		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs = "Maxixi Tights +1",
-		feet = "Maxixi Shoes +1"
+		waist = "Eschan Stone",
+		legs = "Nyame Flanchard",
+		feet = "Nyame Sollerets"
     }
+	
     --Provoke
-	sets.precast['Animated Flourish'] = {
-        head = "Maxixi Tiara +1",
-        neck = "Combatant's Torque",
-		ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Maxixi Casaque +1",
-		hands = "Adhemar Wristbands",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
-		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs = "Maxixi Tights +1",
-		feet = "Maxixi Shoes +1"
-    }
+	sets.precast['Animated Flourish'] = set_combine(sets.precast.Flourish, 
+	{ring1 = "Odium ring"})
+	
     --Stun
-    sets.precast['Violent Flourish'] = {
-        head = "Maxixi Tiara +1",
-        neck = "Combatant's Torque",
-		ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Horos Casaque +1",
-		hands = "Adhemar Wristbands",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
-		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs = "Maxixi Tights +1",
-		feet = "Maxixi Shoes +1"
-    }
+    sets.precast['Violent Flourish'] = set_combine(sets.precast.Flourish)
+	
     --TP
-    sets.precast['Reverse Flourish'] = {
-        head = "Maxixi Tiara +1",
-        neck = "Combatant's Torque",
-		ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Maxixi Casaque +1",
-		hands = "Maculele Bangles",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
-		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs = "Maxixi Tights +1",
-		--feet = "Etoile Toeshoes +2"
-    }
+    sets.precast['Reverse Flourish'] = set_combine(sets.precast.Flourish, {
+		hands = "Maculele Bangles +1",
+		back = "Toetapper Mantle"})
+	
 	--Critical Strikuuuuu
-    sets.precast['Climactic Flourish'] = {
-        head = "Maculele Tiara +1",
-        neck = "Combatant's Torque",
-    	ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Maxixi Casaque +1",
-		hands = "Adhemar Wristbands",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
-		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs = "Maxixi Tights +1",
-		feet = "Maxixi Shoes +1"
-    }
+    sets.precast['Climactic Flourish'] = set_combine(sets.precast.Flourish, {
+        head = "Maculele Tiara +2"})
+	
     --Double Attack
-    sets.precast['Striking Flourish'] = {
-        head = "Maxixi Tiara +1",
-        neck = "Combatant's Torque",
-    	ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Maculele Casaque",
-		hands = "Adhemar Wristbands",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
-		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs = "Maxixi Tights +1",
-		feet = "Maxixi Shoes +1"
-    }
+    sets.precast['Striking Flourish'] = set_combine(sets.precast.Flourish)
     
 	--Steps
     --Evasion Down
 	sets.precast.Step = {
         head = "Maxixi Tiara +1",
         neck = "Combatant's Torque",
-		ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Maxixi Casaque +1",
+		ear1 = "Digni. Earring",
+		ear2 = "Telos Earring",
+		body = "Horos Casaque +3",
 		hands = "Maxixi Bangles +3",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
+		ring1 = "Ilabrat ring",
+		ring2 = "Mummu Ring",
 		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}}
-		--feet = "Etoile Toeshoes +2"
+		waist = "Eschan Stone",
+		legs="Nyame Flanchard",
+		--feet = "Horos Toe Shoes"
+		feet = "Nyame Sollerets"
     }
     --Crit Hit Evasion Down
-    sets.precast['Feather Step'] = {
-        head = "Maxixi Tiara +1",
-        neck = "Combatant's Torque",
-    	ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Maxixi Casaque +1",
-		hands = "Maxixi Bangles +3",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
-		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
-		feet = "Maculele Toeshoes"
-    }
+    sets.precast['Feather Step'] = set_combine(sets.precast.Step, {
+		feet = "Macu. Toe Shoes +1"})
 	
     --Jigs
     sets.precast.Jig = {
-        head = "Maxixi Tiara +1",
-        neck = "Combatant's Torque",
-		ear1 = "Sherida Earring",
-		ear2 = "Cessance Earring",
-		body = "Maxixi Casaque +1",
-		hands = "Maxixi Bangles +3",
-		ring1 = "Rajas ring",
-		ring2 = "Epona's Ring",
-		back = "Toetapper Mantle",
-		waist = "Windbuffet belt +1",
-		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
-		feet = "Maxixi Shoes +1"
+        legs = "Horos Tights +3",
+		feet = "Maxixi Toe Shoes +2"
     }
 	
+	--Samba Time
+	sets.precast.Samba = {
+		head = "Maxixi Tiara +1"
+	}
+	
+	sets.precast['Haste Samba'] = set_combine(sets.precast.Samba)
+	
 	--Weaponskill action
-	sets.precast.WS = sets.aftercast.TP
+	--sets.precast.WS = sets.aftercast.TP
+	sets.precast.WS = {
+		ammo = "Charis Feather",
+		head = "Maculele Tiara +2",
+		neck = "Fotia Gorget",
+		ear1 = "Ishvara Earring",
+		ear2 = "Moonshade Earring",
+		body = "Horos Casaque +3",
+		hands = "Maxixi Bangles +3",
+		ring1 = "Ilabrat Ring",
+		ring2 = "Regal Ring",
+		back = "Senuna's Mantle",
+		waist = "Fotia Belt",
+		legs = "Horos Tights +3",
+		feet= "Lustratio Leggings"
+	}
+	
     --Normal Weaponskills are cool and play nicely
 	
     --Sharkbite Fragmentation DEX 40% AGI 40%
-	sets.precast['Shark Bite'] = {
-		ammo = "Charis Feather",
-		head = "Maculele Tiara +1",
-		neck = "Fotia Gorget",
-		body = "Adhemar Jacket",
-		ring1= "Apate Ring",
-		ring2= "Ilabrat Ring",
-		back = "Senuna's mantle",
-		waist = "Fotia Belt",
-		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
-		ear1 = "Moonshade Earring",
-		feet = "Lustratio Leggings"}
+	sets.precast['Shark Bite'] = set_combine(sets.precast.WS)
 		
     --Evisceration Gravitation/Transfixion DEX 50%
-	sets.precast['Evisceration'] = { 
-		ammo = "Charis Feather",
-		head = "Herculean Helm",
-		neck = "Fotia Gorget",
-		body = "Adhemar Jacket",
-		hands = "Mummu Wrists +2",
-		ring1= "Mummu Ring",
-		ring2= "Ilabrat Ring",
-		back = "Senuna's mantle",
-		waist = "Fotia Belt",
-		legs = "Lustratio Subligar",
-		ear1 = "Moonshade Earring",
-		ear2 = "Sherida Earring",
-		feet = "Lustratio Leggings"}
+	sets.precast['Evisceration'] = set_combine(sets.precast.WS)
 		
     --Rudra's Storm Darkness/Distortion DEX 80%
-	sets.precast['Rudra\'s Storm'] = { 
-		ammo = "Charis Feather",
-		head = "Maculele Tiara +1",
-		hands = "Maxixi Bangles +3",
-		neck = "Fotia Gorget",
-		body = "Meg. Cuirie +2",
-		ring1= "Apate Ring",
-		ring2= "Ilabrat Ring",
-		back = "Senuna's mantle",
-		waist = "Fotia Belt",
-		legs = "Lustratio Subligar",
-		ear1 = "Moonshade Earring",
-		ear2 = "Ishvara Earring",
-		feet ="Lustratio Leggings"}
-		
-	sets.precast.ClimacticRudras = sets.precast['Rudra\'s Storm']
+	sets.precast['Rudra\'s Storm'] = set_combine(sets.precast.WS)
 	
 	--Pyrrhic Kleos STR 40% DEX40%
-	sets.precast['Pyrrhic Kleos'] = {
-	    ammo = "Charis Feather",
-		head = "Maculele Tiara +1",
-		neck = "Fotia Gorget",
-		body = "Adhemar Jacket",
-		ring1= "Apate Ring",
-		ring2= "Ilabrat Ring",
-		back = "Senuna's mantle",
-		waist = "Fotia Belt",
-		legs = "Samnuha Tights",
-		ear1 = "Moonshade Earring",
-		feet = "Lustratio Leggings"}
+	sets.precast['Pyrrhic Kleos'] = set_combine(sets.precast.WS)
 	
 	--Extenerator
-	sets.precast['Extenerator'] = { 
-		ammo = "Charis Feather",
-		head = "Maculele Tiara +1",
-		neck = "Fotia Gorget",
-		body = "Adhemar Jacket",
-		ring1= "Apate Ring",
-		ring2= "Ilabrat Ring",
-		back = "Senuna's mantle",
-		waist = "Fotia Belt",
-		legs={ name="Herculean Trousers", augments={'Accuracy+10 Attack+10','Crit. hit damage +2%','AGI+6','Accuracy+14','Attack+14',}},
-		ear1 = "Moonshade Earring",
-		feet = "Lustratio Leggings"}
+	sets.precast['Extenerator'] = set_combine(sets.precast.WS)
     
 	--Elemental WS is weird need some MAB etc.for these
 	sets.precast['Aeolian Edge'] = { 
 		ammo = "Charis Feather",
-		head = "Maculele Tiara +1",
+		head = "Maculele Tiara +2",
 		neck = "Fotia Gorget",
 		body = "Samnuha Coat",
 		back = "Senuna's mantle",
@@ -329,12 +214,12 @@ function get_sets()
 	
 	--Set for Fast Casting Utsusemi
 	sets.precast.FastCast = {
-	--neck="Magoraga Beads",
-	body = "Passion Jacket",
-	hands = "Leyline Gloves",
-	ring1 = "Rahab Ring",
-	ear1 = "Loquac. Earring",
-	ear2 = "Etiolation Earring"
+		neck="Magoraga Beads",
+		body = "Passion Jacket",
+		hands = "Leyline Gloves",
+		ring1 = "Rahab Ring",
+		ear1 = "Loquac. Earring",
+		ear2 = "Etiolation Earring"
 	}
 	
 end --End Function get_sets
@@ -343,6 +228,7 @@ function precast(spell) --Equip Items based on Abilities or Spells
 	if spell.action_type == 'Magic' then
 		equip(sets.precast.FastCast)
 	elseif sets.precast[spell.english] then
+		--windower.add_to_chat(123, spell.english)
 		equip(sets.precast[spell.english])
 	elseif spell.type == "WeaponSkill" then
 		equip(sets.precast.WS)
@@ -384,7 +270,7 @@ end --End Function status_change(new,old)
 
 function self_command(command)
     if command == 'DoStep' then --Auto Step Stuff
-       if step_index > 2 then --If our index is more than the number of steps we have
+       if step_index > 4 then --If our index is more than the number of steps we have
 	   --send_command('@input /echo === '..step_index..' ===')
 			step_index = 1               -- Reset our index
 	   end

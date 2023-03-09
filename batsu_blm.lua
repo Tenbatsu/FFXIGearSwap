@@ -25,7 +25,7 @@ function get_sets()
 		body = "Jhakri robe +2",
 		hands = "Jhakri Cuffs +2",
 		ring1 = "Defending Ring",
-		ring2 = "Vocane Ring",
+		ring2 = "Vocane Ring +1",
 		back = "Shadow Mantle",
 		waist = "Refoccilation Stone",
 		legs = "Merlinic Shalwar",

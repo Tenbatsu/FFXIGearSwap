@@ -20,7 +20,7 @@ function get_sets()
 		ear2 = "Cessance Earring",
 		body = "Ashera Harness",
 		hands = "Umuthi Gloves",
-		ring1 = "Vocane Ringing",
+		ring1 = "Vocane Ring +1",
 		ring2 = "Defending Ring",
 		back = "Solemnity Cape",
 		waist = "Flume Belt +1",
@@ -98,7 +98,7 @@ function get_sets()
 	
 	--Set for Fast Casting Utsusemi
 	sets.precast.FastCast = {
-		--neck="Magoraga Beads",
+		neck="Magoraga Beads",
 		body = "Passion Jacket",
 		hands = "Leyline Gloves",
 		ring1 = "Rahab Ring",

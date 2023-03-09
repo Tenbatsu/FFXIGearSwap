@@ -1,5 +1,5 @@
 
-send_command('wait 3; input /lockstyleset 11')
+send_command('wait 3; input /lockstyleset 11;wait 5;input /macro book 2; wait 2; input /macro set 1')
 
 function get_sets()
     
@@ -10,17 +10,17 @@ function get_sets()
 	
 	sets.aftercast.Idle = {
 		ammo = "Ginsen",
-		head = "Flam. Zucchetto +1",
-		body = "Flamma Korazin +1",
-		hands = "Flam. Manopolas +1",
-		legs = "Flamma Dirs +1",
-		feet = "Flam. Gambieras +1",
+		head = "Wakido Kabuto +3",
+		body = "Kasuga Domaru +2",
+		hands = "Wakido Kote +3",
+		legs = "Flamma Dirs +2",
+		feet = "Tatena. Sune. +1",
 		neck = "Twilight Torque",
 		waist = "Flume Belt +1",
-		left_ear = "Cessance Earring",
-		right_ear = "Digni. Earring",
+		left_ear = "Telos Earring",
+		right_ear = "Dedition Earring",
 		ring1 = "Defending Ring",
-        ring2 = "Vocane Ring",
+        ring2 = "Vocane Ring +1",
 		back = "Shadow Mantle"
 	}
 	
@@ -29,22 +29,22 @@ function get_sets()
 		--main = "Umaru",
 		--sub = "Bloodrain Strap",
 		ammo = "Ginsen",
-		head = "Flam. Zucchetto +1",
-		body = "Flamma Korazin +1",
-		hands = "Flam. Manopolas +1",
-		legs = "Flamma Dirs +1",
-		feet = "Flam. Gambieras +1",
-		neck = "Combatant's Torque",
+		head = "Flam. zucchetto +2",
+		body = "Kasuga Domaru +2",
+		hands = "Wakido Kote +3",
+		legs = "Flamma Dirs +2",
+		feet = "Tatena. Sune. +1",
+		neck = "Sam. Nodowa +2",
 		waist = "Windbuffet Belt +1",
-		left_ear = "Cessance Earring",
-		right_ear = "Digni. Earring",
+		left_ear = "Telos Earring",
+		right_ear = "Dedition Earring",
 		left_ring = "Ilabrat Ring",
-		right_ring = "Apate Ring",
+		right_ring = "Niqmaddu Ring",
 		back = "Takaha Mantle"
 	}
 	
 	--Set for resting
-	sets.aftercast.hHP = sets.aftercast.TP
+	sets.aftercast.hHP = set_combine(sets.aftercast.TP,{})
 	
 	--Establish the base precast set
 	sets.precast = {}
@@ -58,7 +58,7 @@ function get_sets()
 	--Hasso
 	sets.precast["Hasso"] = {
 		legs = "Unkai Haidate +2",
-		hands = "Wakido Kote +1"}
+		hands = "Wakido Kote +3"}
 	
 	--Seigan
 	sets.precast["Seigan"] = {head = "Unkai Kabuto +1"}
@@ -71,108 +71,141 @@ function get_sets()
 	
 	--Meditate
 	sets.precast["Meditate"] = {
-		hands = "Sakonji Kote",
-		head = "Wakido Kabuto +1",
+		hands = "Sakonji Kote +1",
+		head = "Wakido Kabuto +3",
 		back = "Smertrios's Mantle"}
 	
 	--Shikikoyo
 	sets.precast["Shikikoyo"] = {legs = "Sakonji Haidate"}
 	
 	--Warding Circle
-	sets.precast["Warding Circle"] = {head = "Wakido Kabuto +1"}
+	sets.precast["Warding Circle"] = {head = "Wakido Kabuto +3"}
 	
 	--Blade Bash
-	sets.precast["Blade Bash"] = {hands = "Sakonji Kote"}
+	sets.precast["Blade Bash"] = {hands = "Sakonji Kote +1"}
 	
 	--Finally some weaponskill action
 	--Tachi: Yukikaze 75% STR
 	sets.precast['Tachi: Yukikaze'] = {
-		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
+		body = "Sakonji Domaru +3",
+		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
 		ring2= "Niqmaddu Ring",
-		legs = "Valor. Hose",
+		legs = "Wakido Haidate +3",
 		waist = "Fotia Belt",
 		ammo = "Knobkierrie"}
 		
 	--Tachi Gekko 80% STR
 	sets.precast['Tachi: Gekko'] = {
-		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
+		body = "Sakonji Domaru +3",
+		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
+		ear1 = "Moonshade Earring",
+		ear2 = "Ishvara Earring",
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
 		ring2= "Niqmaddu Ring",
+		legs = "Wakido Haidate +3",
 		waist = "Fotia Belt",
 		ammo = "Knobkierrie"}
 		
 	-- Tachi: Kasha 75% STR
 	sets.precast['Tachi: Kasha'] = {
-		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
+		body = "Sakonji Domaru +3",
+		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
-		ear2 = "Bladeborn Earring",
+		ear2 = "Ishvara Earring",
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
 		ring2= "Niqmaddu Ring",
-		legs = "Valor. Hose",
+		legs = "Wakido Haidate +3",
 		waist = "Fotia Belt",
 		ammo = "Knobkierrie"}
 		
 	--Tachi: Rana 50% STR
 	sets.precast['Tachi: Rana'] = {
-		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
+		body = "Sakonji Domaru +3",
+		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
-		ear2 = "Bladeborn Earring",
+		ear2 = "Ishvara Earring",
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
 		ring2= "Niqmaddu Ring",
-		legs = "Valor. Hose",
+		legs = "Wakido Haidate +3",
 		waist = "Fotia Belt",
 		ammo = "Knobkierrie"}
 		
 	--Tachi: Shoha 85% STR
 	sets.precast['Tachi: Shoha'] = {
-		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
+		body = "Sakonji Domaru +3",
+		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
-		ear2 = "Bladeborn Earring",
+		ear2 = "Ishvara Earring",
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
 		ring2= "Niqmaddu Ring",
-		legs = "Valor. Hose",
+		legs = "Wakido Haidate +3",
 		waist = "Fotia Belt",
 		ammo = "Knobkierrie"}
 		
 	--Tachi: Fudo 80% STR
 	sets.precast['Tachi: Fudo'] = {
-		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
+		body = "Sakonji Domaru +3",
+		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
-		ear2 = "Bladeborn Earring",
+		ear2 = "Ishvara Earring",
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
 		ring2= "Niqmaddu Ring",
-		legs = "Valor. Hose",
+		legs = "Wakido Haidate +3",
 		waist = "Fotia Belt",
 		ammo = "Knobkierrie"}
+		
+		sets.precast['Tachi: Jinpu'] = {
+		ammo = "Knobkierrie",
+		head="Nyame Helm",
+		neck = "Fotia Gorget",
+		ear1="Friomisi Earring",
+		ear2="Moonshade Earring",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		ring1="Mujin Band",
+		ring2="Acumen Ring",
+		back="Smertrios's Mantle",
+		waist="Eschan Stone",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets"
+		}
 	
 	sets.precast.WS = {
-		--sub = "Utu Grip",
 		neck = "Fotia Gorget",
+		body = "Sakonji Domaru +3",
+		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
-		ear2 = "Bladeborn Earring",
+		ear2 = "Ishvara Earring",
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
 		ring2= "Niqmaddu Ring",
-		legs = "Valor. Hose",
+		legs = "Wakido Haidate +3",
 		waist = "Fotia Belt",
 		ammo = "Knobkierrie"}
 	
 	--Set for Fast Casting Utsusemi
 	sets.precast.FastCast = {
-	--neck="Magoraga Beads",
+	neck="Magoraga Beads",
 	ear1 = "Loquac. Earring"
 	}
 	

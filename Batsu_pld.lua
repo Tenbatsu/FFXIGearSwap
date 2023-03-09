@@ -1,62 +1,99 @@
 -- PLD
 -- Sets
-send_command('wait 3;input /lockstyleset 8;')
+send_command('wait 3;input /lockstyleset 8; input /macro book 6; wait 5; input /macro set 1')
 
 function get_sets()
 --windower.add_to_chat(123, "Wat.")
 --Mode 1 = Tank
 --Mode 2 = Damage
+--Mode 3 = Kiting
 CurrentMode = 1    
         --Set for standing around town
         sets.aftercast = {}
         
         --Set for running around
         sets.aftercast.Idle = {
-                head = "Founder's Corona",
+                head = "Chevalier's Armet +2",
                 neck = "Diemer Gorget",
                 ear1 = "Etiolation Earring",
                 ear2 = "Ethereal Earring",
-                body = "Rev. Surcoat +2",
-                hands = "Souv. Handschuhs",
+                body = "Rev. Surcoat +3",
+                hands = "Sakpata's Gauntlets",
                 ring1 = "Defending Ring",
-                ring2 = "Vocane Ring",
+                ring2 = "Vocane Ring +1",
                 back = "Weard Mantle",
                 waist = "Flume Belt +1",
                 legs = "Carmine Cuisses +1",
-                feet = "Odyssean Greaves",
+                feet = "Rev. Leggings +3",
 				ammo = "Angha Gem"
         }
+		
+		--Set for running around like an idiot
+		sets.aftercast.Kiting = {set_combine(sets.aftercast.Idle,{})}
+		--Set for running around like an idiot Magically
+		sets.aftercast.MKiting= {set_combine(sets.aftercast.Idle,{})}
+		
         --Set for face punched
         sets.aftercast.Tank = {
-                head = "Founder's Corona",
+                head = "Chevalier's Armet +2",
+                neck = "Diemer Gorget",
+                ear1 = "Etiolation Earring",
+                ear2 = "Ethereal Earring",
+                body = "Rev. Surcoat +3",
+                hands = "Sakpata's Gauntlets",
+                ring1 = "Defending Ring",
+                ring2 = "Vocane Ring +1",
+                back = "Weard Mantle",
+                waist = "Flume Belt +1",
+                legs = "Sakpata's Cuisses",
+                feet = "Rev. Leggings +3",
+				ammo = "Angha Gem"
+        }
+		sets.aftercast.MTank = {set_combine(sets.aftercast.Tank,{
+                head = "Chevalier's Armet +2",
                 neck = "Diemer Gorget",
                 ear1 = "Etiolation Earring",
                 ear2 = "Ethereal Earring",
                 body = "Souveran Cuirass",
-                hands = "Souv. Handschuhs",
+                hands = "Sakpata's Gauntlets",
                 ring1 = "Defending Ring",
-                ring2 = "Vocane Ring",
+                ring2 = "Vocane Ring +1",
                 back = "Weard Mantle",
                 waist = "Flume Belt +1",
-                legs = "Odyssean Cuisses",
+                legs = "Sakpata's Cuisses",
                 feet = "Odyssean Greaves",
-				ammo = "Angha Gem"
-        }
+				ammo = "Angha Gem"}
+        )}
+		sets.aftercast.PTank = {set_combine(sets.aftercast.Tank,{
+                head = "Chevalier's Armet +2",
+                neck = "Diemer Gorget",
+                ear1 = "Etiolation Earring",
+                ear2 = "Ethereal Earring",
+                body = "Souveran Cuirass",
+                hands = "Sakpata's Gauntlets",
+                ring1 = "Defending Ring",
+                ring2 = "Vocane Ring +1",
+                back = "Weard Mantle",
+                waist = "Flume Belt +1",
+                legs = "Sakpata's Cuisses",
+                feet = "Odyssean Greaves",
+				ammo = "Angha Gem"}
+        )}
 		--Set for face punching
         sets.aftercast.Damage = {
-                head = "Flam. Zucchetto +1",
-                neck = "Combatant's Torque",
-                ear1 = "Steelflash earring",
-                ear2 = "Bladeborn Earring",
-                body = "Flamma Korazin +1",
-                hands = "Flam. Manopolas +1",
-                ring1 = "Rajas Ring",
-                ring2 = "Apate Ring",
-                back = "Atheling Mantle",
-                waist = "Windbuffet Belt +1",
-                legs = "Flamma Dirs +1",
-                feet = "Flam. Gambieras +1",
-				ammo = "Ginsen"
+			ammo="Ginsen",
+			head="Sakpata's Helm",
+			body="Sakpata's Plate",
+			hands="Sakpata's Gauntlets",
+			legs="Sakpata's Cuisses",
+			feet="Sakpata's Leggings",
+			neck="Combatant's Torque",
+			waist="Windbuffet Belt +1",
+			left_ear="Telos Earring",
+			right_ear="Cessance Earring",
+			left_ring="Regal Ring",
+			right_ring="Apate Ring",
+			back="Atheling Mantle"
         }
 		
         
@@ -65,14 +102,14 @@ CurrentMode = 1
         
         --Some Job Abilities
         --Base PLD Job Abilities
-        sets.precast['Invincible'] = {legs = "Cab. Breeches +1"}
-        sets.precast['Holy Circle'] = {feet = "Rev. Leggings +1"}
-        sets.precast['Shield Bash'] = {hands = "Cab. Gauntlets +1"}
-        sets.precast['Sentinel'] = {feet = "Cab. Leggings +1"}
-        sets.precast['Cover'] = {head = "Rev. Coronet +1", body = "Cab. Surcoat +1"}
-        sets.precast['Rampart'] = {head = "Cab. Coronet"}
-        sets.precast['Fealty'] = {body = "Cab. Surcoat +1"}
-        sets.precast['Chivalry'] = {hands = "Cab. Gauntlets +1"}
+        sets.precast['Invincible'] = {legs = "Cab. Breeches +3"}
+        sets.precast['Holy Circle'] = {feet = "Rev. Leggings +3"}
+        sets.precast['Shield Bash'] = {hands = "Cab. Gauntlets +3"}
+        sets.precast['Sentinel'] = {feet = "Cab. Leggings +3"}
+        sets.precast['Cover'] = {head = "Rev. Coronet +3", body = "Cab. Surcoat +3"}
+        sets.precast['Rampart'] = {head = "Cab. Leggings +3"}
+        sets.precast['Fealty'] = {body = "Cab. Surcoat +3"}
+        sets.precast['Chivalry'] = {hands = "Cab. Gauntlets +3"}
         sets.precast['Divine Emblem'] = {feet = "Chev. Sabatons +1"}
         --sets.precast['Sepulcher'] = {}
         --sets.precast['Palisade'] = {}
@@ -81,24 +118,24 @@ CurrentMode = 1
         --PLD Subjobs
         --Warrior
         sets.precast['Provoke'] = {
-			head = "Rev. Coronet +1",
-			neck = "Homeric Gorget",
+			head = "Rev. Coronet +3",
+			neck = "Moonlight Necklace",
 			body = "Souveran Cuirass",
-			hands = "Cab. Gauntlets +1",
+			hands = "Cab. Gauntlets +3",
 			ring1 = "Odium Ring",
 			waist = "Sulla Belt",
-			legs = "Cab. Breeches +1",
+			legs = "Cab. Breeches +3",
 			feet = "Chev. Sabatons +1"
 		}
 		
 		sets.precast['Flash'] = {
-			head = "Rev. Coronet +1",
-			neck = "Homeric Gorget",
+			head = "Rev. Coronet +3",
+			neck = "Moonlight Necklace",
 			body = "Souveran Cuirass",
-			hands = "Cab. Gauntlets +1",
+			hands = "Cab. Gauntlets +3",
 			ring1 = "Odium Ring",
 			waist = "Sulla Belt",
-			legs = "Cab. Breeches +1",
+			legs = "Cab. Breeches +3",
 			feet = "Chev. Sabatons +1"
 		}
 		
@@ -110,41 +147,58 @@ CurrentMode = 1
         sets.precast.WS = {}
         --Savage Blade STR 50% MND 50%
         sets.precast['Savage Blade'] = {
-				head = "Flam. Zucchetto +1",
-				body = "Flamma Korazin +1",
-				hands = "Flam. Manopolas +1",
-				ring1 = "Aqua Ring",
-				ring2 = "Aqua Ring",
-				back = "Forager's Mantle",
-				legs = "Flamma Dirs +1",
-				feet = "Flam. Gambieras +1",
+				head="Sakpata's Helm",
+				body = "Sakpata's Plate",
+				hands="Sakpata's Gauntlets",
+				ring1 = "Regal Ring",
+				ring2 = "Apate Ring",
+				legs = "Sakpata's Cuisses",
+				feet = "Lustratio Leggings",
                 neck = "Fotia Gorget",
                 ear1 = "Moonshade Earring",
+				ear2 = "Ishvara Earring",
+				back = "Rudianos's Mantle",
                 waist = "Fotia Belt"}
         --Requiescat  MND 73-85% based on TP               
         sets.precast['Requiescat'] = {
                 neck = "Fotia Gorget",
                 ear1 = "Moonshade Earring",
+				back = "Rudianos's Mantle",
                 waist = "Fotia Belt"}
         --Chant du Cygne DEX 80%
         sets.precast['Chant du Cygne'] = {
-				head = "Flam. Zucchetto +1",
-				body = "Flamma Korazin +1",
+				head = "Flam. Zucchetto +2",
+				body = "Flamma Korazin +2",
 				hands = "Flam. Manopolas +1",
 				ring1 = "Ramuh Ring",
 				ring2 = "Ramuh Ring",
-				back = "Forager's Mantle",
-				legs = "Flamma Dirs +1",
-				feet = "Flam. Gambieras +1",
+				legs = "Flamma Dirs +2",
+				feet = "Flam. Gambieras +2",
                 neck = "Fotia Gorget",
                 ear1 = "Moonshade Earring",
+				back = "Rudianos's Mantle",
                 waist = "Fotia Belt"}
         --Atonement  Current Enmity
         sets.precast['Atonement'] = {
                 neck = "Fotia Gorget",
                 ear1 = "Moonshade Earring",
+				back = "Rudianos's Mantle",
                 waist = "Fotia Belt"}
-        --Aeolian Edge
+		--Knights of Round
+		sets.precast['Knights of Round'] = {
+				head="Sakpata's Helm",
+				body = "Sakpata's Plate",
+				hands="Sakpata's Gauntlets",
+				ring1 = "Regal Ring",
+				ring2 = "Apate Ring",
+				legs = "Sakpata's Cuisses",
+				feet = "Lustratio Leggings",
+                neck = "Fotia Gorget",
+                ear1 = "Moonshade Earring",
+				ear2 = "Ishvara Earring",
+				back = "Rudianos's Mantle",
+                waist = "Fotia Belt"}
+		--Aeolian Edge
         sets.precast['Aeolian Edge'] = {
                 neck = "Fotia Gorget",
                 ear1 = "Crematio Earring",
@@ -152,37 +206,79 @@ CurrentMode = 1
                 --ring1="Shiva Ring",
                 --ring2="Shiva Ring",
                 --back="Toro Cape",
+				back = "Rudianos's Mantle",
                 waist = "Fotia Belt"}
                  
-        sets.precast.WS = sets.aftercast.TP
+        sets.precast.WS = {
+				head="Sakpata's Helm",
+				body = "Sakpata's Plate",
+				hands="Sakpata's Gauntlets",
+				ring1 = "Regal Ring",
+				ring2 = "Apate Ring",
+				legs = "Sakpata's Cuisses",
+				feet = "Lustratio Leggings",
+                neck = "Fotia Gorget",
+                ear1 = "Moonshade Earring",
+				ear2 = "Ishvara Earring",
+				back = "Rudianos's Mantle",
+                waist = "Fotia Belt"}
         
         --Set for Fast Casting
         sets.precast.FastCast = {
-        head = "Chev. Armet +1",
-		body= "Rev. Surcoat +2", 
-		hands = "Leyline Gloves",
-        ear1 = "Loquac. Earring",
-		ear2 = "Etiolation Earring",
-		feet = "Odyssean Greaves"
+		ammo = "Incantor Stone",
+        head = "Chevalier's Armet +2", --8%
+		neck = "Voltsurge Torque", -- 4%
+		body= "Rev. Surcoat +3", --10%
+		hands = "Leyline Gloves", --8%
+        ear2 = "Loquac. Earring",
+		ear1 = "Etiolation Earring", --1%
+		ring1 = "Rahab Ring", --2%
+		ring2 = "Kishar Ring", --4%
+		back = "Solemnity Cape",
+		legs = "Founder's Hose",
+		feet = "Odyssean Greaves" --5%
         }
+		
+		sets.midcast = {}
+		
+		--Spell Interuption Rate Down
+		sets.midcast.SIRD = {
+			neck = "Moonlight Necklace", --15%
+			legs = "Founder's Hose", -- 30%
+			feet = "Odyssean Greaves" -- 20%		
+		}
+		
+		sets.midcast['Phalanx'] = {
+			hands = "Souv. Handschuhs",
+			back = "Weard Mantle",
+			legs = "Sakpata's Cuisses",
+			feet = "Souveran schuhs"
+		}
+		
         
 end --End Function get_sets
 
 
 function precast(spell) --Equip Items based on Abilities or Spells
 --windower.add_to_chat(123, CurrentMode)
-        if spell.action_type == 'Magic' then
-                equip(sets.FastCast)
-        elseif sets.precast[spell.english] then
-                equip(sets.precast[spell.english])
+	--windower.add_to_chat(123, spell.type)
+        if sets.precast[spell.english] then
+			equip(sets.precast[spell.english])
         elseif spell.type == "WeaponSkill" then
-                equip(sets.precast.WS)
+            equip(sets.precast.WS)
         else
+			equip(sets.precast.FastCast)
         end
 end --End Function precast(spell)
 
 function midcast(spell)
 --windower.add_to_chat(123, CurrentMode)
+	if sets.midcast[spell.english] then
+		equip(sets.midcast[spell.english])
+    else
+		--equip(sets.midcast.SIRD)
+	end
+		
 end
 
 function aftercast(spell)

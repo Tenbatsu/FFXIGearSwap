@@ -88,6 +88,9 @@ function get_sets()
         --66% required
         --Total 45% from Gear
         main = "Midnights", -- 3% DT
+		head = "Nyame Helm",
+		body = "Nyame Mail",
+		feet = "Nyame Sollerets",
         --neck = "Shepherd's Chain", -- 2% DT
         legs = "Foire Churidars +2", -- 3% DT
         waist = "Isa Belt", -- 3% DT
@@ -98,6 +101,8 @@ function get_sets()
         back = "Visucius's Mantle",
         ear1 = "Enmerkar Earring",
         ear2 = "Handler's Earring +1",
+		ring1 = "Varar Ring +1",
+		ring2 = "Varar Ring +1"
         --ring1 = "Thurandaut Ring", -- 3% DT
         --ring2 = "Overbearing Ring",
     }
@@ -121,7 +126,7 @@ function get_sets()
         waist = "Incarnation Sash",
         neck = "Shulmanu Collar",
         ear1 = "Enmerkar Earring",
-        ear2 = "Handler's Earring +1",
+        ear2 = "Domes. Earring",
         hands = "Tali'ah Gages +2",
         legs={ name="Herculean Trousers", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Store TP"+7','Pet: INT+2',}},
 		feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+17','Pet: "Store TP"+10','Pet: INT+8','Pet: Attack+9 Pet: Rng.Atk.+9',}},

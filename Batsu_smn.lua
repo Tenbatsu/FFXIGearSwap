@@ -67,7 +67,7 @@ sets.idle = { -- What to wear when no pet is out
         body="Shomonjijoe +1",
         hands="Merlinic Dastanas",
         ring1="Defending Ring",
-        ring2="Vocane Ring",
+        ring2="Vocane Ring +1",
         back="Shadow Mantle",
         waist="Incarnation Sash",
         legs="Apogee Slacks",
@@ -140,12 +140,12 @@ sets.idle = { -- What to wear when no pet is out
 		main="Nirvana",
 		sub="Elan Strap",
 		ammo="Sancus Sachet +1",
-		head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
+		head= "C. Palug Crown",
 		body="Con. Doublet +3",
 		hands="Merlinic Dastanas",
 		legs="Apogee Slacks",
 		feet="Convo. Pigaches +3",
-		neck="Shulmanu Collar",
+		neck="Smn. Collar +2",
 		waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Lugalbanda Earring",
@@ -155,15 +155,16 @@ sets.idle = { -- What to wear when no pet is out
     }
 	
     sets.midcast.BPMagical = {
-		main={ name="Grioavolr", augments={'Blood Pact Dmg.+9','Pet: Mag. Acc.+16','Pet: "Mag.Atk.Bns."+22','DMG:+12',}},
+		--main={ name="Grioavolr", augments={'Blood Pact Dmg.+9','Pet: Mag. Acc.+16','Pet: "Mag.Atk.Bns."+22','DMG:+12',}},
+		main = "Nirvana",
 		sub="Elan Strap",
 		ammo="Sancus Sachet +1",
-		head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
+		head= "C. Palug Crown",
 		body="Con. Doublet +3",
 		hands="Merlinic Dastanas",
 		legs="Enticer's Pants",
 		feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-		neck="Adad Amulet",
+		neck="Smn. Collar +2",
 		waist="Regal Belt",
 		left_ear="Gelos Earring",
 		right_ear="Lugalbanda Earring",
@@ -176,12 +177,12 @@ sets.idle = { -- What to wear when no pet is out
 		main="Nirvana",
 		sub="Elan Strap",
 		ammo="Sancus Sachet +1",
-		head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
+		head= "C. Palug Crown",
 		body="Con. Doublet +3",
 		hands="Merlinic Dastanas",
 		legs="Apogee Slacks",
 		feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-		neck="Shulmanu Collar",
+		neck="Smn. Collar +2",
 		waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Lugalbanda Earring",
@@ -233,7 +234,9 @@ sets.idle = { -- What to wear when no pet is out
     sets.JA = {}
     sets.JA["Mana Cede"] = {}
     sets.JA["Apogee"] = {}
-    sets.JA["Avatar's Favor"] = {}
+    sets.JA["Avatar's Favor"] = {
+			head = "Beckoner's Horn +1"
+	}
     sets.JA["Elemental Siphon"] = {
 		head="Beckoner's Horn +1",
 		body="Beck. Doublet +1",
@@ -273,10 +276,12 @@ end
 	elseif new == 'Astral Conduit' and bool then
 		windower.add_to_chat(123, "Starting Astral Conduit")
 		equip(sets.midcast.BPPhysical)
-		disable("Main", "Sub", "Range", "Ammo", "Head", "Neck", "Ear1", "Ear2", "Body", "Hands", "Ring1", "Ring2", "Back", "Waist", "Legs", "Feet")
+		--disable("Main", "Sub", "Range", "Ammo", "Head", "Neck", "Ear1", "Ear2", "Body", "Hands", "Ring1", "Ring2", "Back", "Waist", "Legs", "Feet")
+		disable("Range", "Ammo", "Head", "Neck", "Ear1", "Ear2", "Body", "Hands", "Ring1", "Ring2", "Back", "Waist", "Legs", "Feet")
 	elseif new == 'Astral Conduit' and not bool then
 		windower.add_to_chat(123, "Astral Conduit Finished")
-		enable("Main", "Sub", "Range", "Ammo", "Head", "Neck", "Ear1", "Ear2", "Body", "Hands", "Ring1", "Ring2", "Back", "Waist", "Legs", "Feet")
+		--enable("Main", "Sub", "Range", "Ammo", "Head", "Neck", "Ear1", "Ear2", "Body", "Hands", "Ring1", "Ring2", "Back", "Waist", "Legs", "Feet")
+		enable("Range", "Ammo", "Head", "Neck", "Ear1", "Ear2", "Body", "Hands", "Ring1", "Ring2", "Back", "Waist", "Legs", "Feet")
 		aftercast()
 	end
 end

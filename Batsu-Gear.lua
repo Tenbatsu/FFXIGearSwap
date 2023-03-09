@@ -30,7 +30,7 @@ function init_gear()
     gear.ring.MDTRing = { name="Dark Ring", augments={'Magic dmg. taken -3%', 'Phys. dmg. taken -5%'}}
     gear.ring.BDTRing = { name="Dark Ring", augments={'Phys dmg. taken -5%', 'Breath dmg. taken -3%'}}
     gear.ring.dt_left = { name="Defending Ring" }
-    gear.ring.dt_right = { name="Vocane Ring" }
+    gear.ring.dt_right = { name="Vocane Ring +1" }
     gear.ring.regen_left = { name="Sheltered Ring" }
     gear.ring.regen_right = { name="Paguroidea Ring" }
 

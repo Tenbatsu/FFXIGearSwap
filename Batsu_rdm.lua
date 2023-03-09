@@ -18,7 +18,7 @@ function get_sets()
 		body = "Jhakri Robe +2",
 		hands = "Umuthi Gloves",
 		ring1 = "Defending Ring",
-		ring2 = "Vocane Ring",
+		ring2 = "Vocane Ring +1",
 		back = "Mecisto. Mantle",
 		waist = "Flume Belt +1",
 		legs = "Carmine Cuisses +1",
@@ -92,9 +92,9 @@ function get_sets()
 	sets.midcast.Enhancing = {
 		head="Estq. Chappel +2",
 		body="Vitiation Tabard +1", --go get estq +2 for set bonus you slut
-		hands="Atrophy Gloves +1",
+		hands="Atrophy Gloves +2",
 		legs="Atrophy Tights +1",
-		feet="Estq. Houseaux +2",
+		feet="Lethargy Houseaux",
 		neck="Sanctity Necklace",
 		waist="Olympus Sash",
 		left_ear="Etiolation Earring",
@@ -133,12 +133,11 @@ function get_sets()
 		legs="Atrophy Tights +1", -- 10%
 		feet="Amalric Nails"}
         
-    --sets.midcast['Refresh'] = {legs="Estoqueur's Fuseau +2"}
+    sets.midcast['Refresh'] = {legs="Lethargy Fuseau"}
     sets.midcast['Stoneskin'] = set_combine(sets.midcast.Enhancing,{ear2="Earthcry Earring"}) --main="Pukulatmuj"
 	sets.midcast['Phalanx II'] = set_combine(sets.midcast['Enfeebling Magic'], {hands="Vitiation gloves"})
     sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation Chapeau +1"})
-    sets.midcast['Slow II'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation Chapeau +1"})
-	sets.midcast['Slow II'] = set_combine(sets.midcast['Enfeebling Magic'], {feet="Vitiation Boots"})
+    sets.midcast['Slow II'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Vitiation Chapeau +1", feet="Vitiation Boots +1"})
 	
 	sets.midcast.ElementalBurst = {
 		main={ name="Grioavolr", augments={'Magic burst dmg.+5%','Mag. Acc.+3','"Mag.Atk.Bns."+12','Magic Damage +7',}},

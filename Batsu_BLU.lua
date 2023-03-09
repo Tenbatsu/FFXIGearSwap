@@ -2,7 +2,7 @@ res = require('resources')
 map = require('BLUSpellMap')
 -- Sets
 
-send_command('wait 3; input /lockstyleset 2;')
+send_command('wait 3; input /lockstyleset 2; input /macro book 3; wait 2; input /macro set 1')
 	
 disable('main','sub')
 
@@ -17,7 +17,7 @@ function get_sets()
         ear2="Ethereal Earring",
         body="Jhakri Robe +2",
         hands="Adhemar Wristbands",
-        ring1="Vocane Ring",
+        ring1="Vocane Ring +1",
         ring2="Defending Ring",
 		--back="Mecisto. Mantle",
         back="Shadow Mantle",
@@ -51,16 +51,16 @@ function get_sets()
         ammo="Ginsen",
         head="Dampening Tam",
         neck="Combatant's Torque",
-        ear1="Steelflash Earring",
-        ear2="Bladeborn Earring",
-        body="Rawhide Vest",
+        ear1="Telos Earring",
+        ear2="Cessance Earring",
+        body="Adhemar Jacket",
         hands="Adhemar Wristbands",
-        ring1="Epona's Ring",
-        ring2="Rajas Ring",
+        ring1="Ilabrat Ring",
+        ring2="Epona's Ring",
         back="Cornflower Cape",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
-        feet="Herculean Boots"}
+        feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4',}}}
     
     -- JA sets
     sets.JA = {}
@@ -71,29 +71,37 @@ function get_sets()
         ammo="Ginsen",
         head="Herculean Helm",
         neck="Fotia Gorget",
-        ear1="Steelflash Earring",
+        ear1 = "Ishvara Earring",
         ear2="Moonshade Earring",
         body="Rawhide Vest",
         hands="Jhakri Cuffs +2",
-        ring1="Rajas Ring",
-        ring2="Epona's Ring",
+        ring1="Ilabrat Ring",
+        ring2="Rajas Ring",
         back="Bleating Mantle",
         waist="Fotia Belt",
-        legs="Herculean Trousers",
+        legs="Samnuha Tights",
         feet="Herculean Boots"
     }
  
     sets.WS.Requiescat = set_combine(sets.WS, {ear2="Moonshade Earring"})
+	
 	sets.WS["Chant du Cygne"] = set_combine(sets.WS, {})
+	
+	sets.WS["Savage Blade"] = set_combine(sets.WS,{
+		body = "Jhakri Robe +2",
+		back = "Cornflower Cape",
+		legs = "Jhakri Slops +2",
+		feet = "Jhakri Pigaches +2"
+	})
  
     -- Magic sets. Lots of them!
 	--Base Sets
 	sets["Blue Skill"] = {
         ammo="Mavi Tathlum",
-		hands="Assim. Bazu. +1",
-        --head="Luhlaza Keffiyeh",
-        --body="Assim. Jubbah +1",
-        --legs="Hashishin Tayt",
+		hands="Assim. Bazu. +2",
+        head="Luhlaza Keffiyeh +1",
+        body="Assim. Jubbah +2",
+        legs="Hashishin Tayt +1",
         feet="Luhlaza Charuqs",
 		--neck="Incanter's Torque",
 		neck="Sanctity Necklace",
@@ -105,7 +113,7 @@ function get_sets()
         ring1="Rajas Ring",
         ring2="Apate Ring",
         waist="Warwolf Belt",
-        feet="Herculean Boots"
+        feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4',}}
     })
 	sets["Magical"] = set_combine(sets["Blue Skill"], {
         head="Jhakri Coronal +2",

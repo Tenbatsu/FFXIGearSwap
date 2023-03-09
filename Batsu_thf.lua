@@ -111,6 +111,12 @@ function get_sets()
 	sets.precast.JA["Larceny"] = set_combine(sets.aftercast.TP, {})
 	sets.precast.JA["Assassin\'s Charge"] = set_combine(sets.aftercast.TP, {})
 	sets.precast.JA["Feint"] = set_combine(sets.aftercast.TP, {})
+	sets.precast.JA["Steal"] = set_combine(sets.aftercast.TP, {
+		feet = "Rogue's Poulaines",
+		legs = "Rogue's Culottes",
+		hands = "Rogue's Armlets",
+		head = "Rogue's Bonnet"
+	})
 	
 	sets.precast.FC = set_combine(sets.aftercast.TP, {})
 	sets.precast["Utsusemi"] = set_combine(sets.precast.FC, {})

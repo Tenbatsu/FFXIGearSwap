@@ -1,53 +1,39 @@
+send_command('wait 3; input /lockstyleset 6;wait 5;input /macro book 1; wait 2; input /macro set 3')
+
+
 function get_sets()
     
 	--Set for standing around town
 	sets.aftercast = {}
-	
-	--sets.aftercast.Idle = {
-		--head = "Lilac Corsage",
-		--neck = "Asperity Necklace",
-		--ear1 = "Steelflash Earring",
-		--ear2 = "Bladeborn Earring",
-		--body = "Usukane Haramaki",
-		--hands = "Usukane Gote",
-		--ring1 = "Spiral Ring",
-		--ring2 = "Epona's Ring",
-		--back = "Atheling Mantle",
-		--waist = "Black Belt",
-		--legs = "Tantra Hose +2",
-		--feet = "Hermes' Sandals"
-	--}
-	
+		
 	sets.aftercast.Idle = {
-		main="Denouements",
 		ammo="Ginsen",
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
 		body = "Ashera Harness",
 		hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
 		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
 		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4',}},
-		neck="Combatant's Torque",
+		neck="Twilight Torque",
 		waist="Black Belt",
 		left_ear="Sherida Earring",
-		right_ear="Cessance Earring",
+		right_ear="Bhikku Earring +1",
 		left_ring="Defending Ring",
-		right_ring="Vocane Ring",
+		right_ring="Vocane Ring +1",
 		back="Shadow Mantle"
 	}
 	
 	--Set for face punching
 	sets.aftercast.TP = {
-		main="Denouements",
 		ammo="Ginsen",
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
 		body = "Ashera Harness",
 		hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
 		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4',}},
+		feet = "Tatena. Sune. +1",
 		neck="Combatant's Torque",
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
-		right_ear="Cessance Earring",
+		right_ear="Bhikku Earring +1",
 		left_ring="Niqmaddu Ring",
 		right_ring="Epona's Ring",
 		back="Atheling Mantle"
@@ -55,7 +41,7 @@ function get_sets()
 	
 	--Set for resting
 	sets.aftercast.hHP = {
-		body = "Mel. Cyclas +2",
+		body = "Hes. Cyclas +1",
 		back = "Melee Cape"
 	}
 	
@@ -65,50 +51,51 @@ function get_sets()
 	--Some Job Abilities
 	
 	--Hundred Fists
-	sets.precast.HundredFists = {legs = "Hes. Hose"}
+	sets.precast.HundredFists = {legs = "Hes. Hose +1"}
 	
 	--Boost
-	sets.precast.Boost = {hands = "Hes. Gloves"}
+	sets.precast.Boost = {hands = "Anchor. Gloves +3",}
 	
 	--Focus
-	sets.precast.Focus = {head = "Anchor. Crown +1"}
+	sets.precast.Focus = {head = "Anch. Crown +3"}
 	
 	--Dodge
-	sets.precast.Dodge = {feet = "Anch. Gaiters +1"}
+	sets.precast.Dodge = {feet = "Anch. Gaiters +2"}
 	
 	--Chi Blast (Stack MND)
 	sets.precast.ChiBlast = {
-		head = "Anchor. Crown +1",
-		body = "Anch. Cyclas +1",
+		head = "Anch. Crown +3",
+		body = "Nyame Mail",
 		ring1 = "Aqua Ring",
 		ring2 = "Aqua Ring",
 		back = "Melee Cape",
-		legs = "Anch. Hose +1",
-		feet = "Suzaku's Sune-ate"}
+		waist = "Luminary Sash",
+		legs = "Nyame Flanchard",
+		feet = "Shukuyu Sune-Ate"}
 		
 	--Counterstance
-	sets.precast.Counterstance = {feet = "Hes. Gaiters"}
+	sets.precast.Counterstance = {feet = "Hes. Gaiters +1"}
 	
 	--Impetus
-	sets.precast.Impetus = {body = "Tantra Cyclas +2"}
+	sets.precast.Impetus = {body = "Bhikku Cyclas +1"}
 	
 	--Footwork
-	sets.precast.Footwork = {feet = "Tantra Gaiters +2"}
+	sets.precast.Footwork = {feet = "Bhikku Gaiters +1"}
 	
 	--Forlmless Strikes
-	sets.precast['Formless Strikes'] = {"Mel. Cyclas +2"}
+	sets.precast['Formless Strikes'] = {"Hes. Cyclas +1"}
 	
 	--Chakra (Stack VIT)
 	sets.precast.Chakra = {
-		head = "Anchor. Crown +1",
+		head = "Anch. Crown +3",
 		neck = "Promise Badge",
 		ear1 = "Kemas Earring",
-		body = "Anch. Cyclas +1",
-		hands = "Hes. Gloves",
+		body = "Anch. Cyclas +2",
+		hands = "Hes. Gloves +1",
 		back = "Anchoret's Mantle",
 		waist = "Warwolf Belt",
-		legs = "Anch. Hose +1",
-		feet = "Anch. Gaiters +1"
+		legs = "Anch. Hose +2",
+		feet = "Anch. Gaiters +2"
 	}
 	
 	--Finally some weaponskill action
@@ -128,8 +115,9 @@ function get_sets()
 	sets.precast['Asuran Fists'] = {
 		neck = "Fotia Gorget",
 		--back = "Smertrios's Mantle",
-		ring1= "Ilabrat Ring",
+		ring1= "Regal Ring",
 		ring2= "Niqmaddu Ring",
+		hands = "Anchor. Gloves +3",
 		ear1 = "Ishvara Earring",
 		ear2 = "Moonshade Earring",
 		waist = "Fotia Belt",
@@ -139,8 +127,9 @@ function get_sets()
 	sets.precast['Shijin Spiral'] = {
 		neck = "Fotia Gorget",
 		--back = "Smertrios's Mantle",
-		ring1= "Ilabrat Ring",
+		ring1= "Regal Ring",
 		ring2= "Niqmaddu Ring",
+		hands = "Anchor. Gloves +3",
 		ear1 = "Ishvara Earring",
 		ear2 = "Moonshade Earring",
 		waist = "Fotia Belt",
@@ -150,8 +139,9 @@ function get_sets()
 	sets.precast['Tornado Kick'] = {
 		neck = "Fotia Gorget",
 		--back = "Smertrios's Mantle",
-		ring1= "Ilabrat Ring",
+		ring1= "Regal Ring",
 		ring2= "Niqmaddu Ring",
+		hands = "Anchor. Gloves +3",
 		ear1 = "Ishvara Earring",
 		ear2 = "Moonshade Earring",
 		waist = "Fotia Belt",
@@ -161,8 +151,9 @@ function get_sets()
 	sets.precast['Ascetic\'s Fury'] = {
 		neck = "Fotia Gorget",
 		--back = "Smertrios's Mantle",
-		ring1= "Ilabrat Ring",
+		ring1= "Regal Ring",
 		ring2= "Niqmaddu Ring",
+		hands = "Anchor. Gloves +3",
 		ear1 = "Ishvara Earring",
 		ear2 = "Moonshade Earring",
 		waist = "Fotia Belt",
@@ -172,8 +163,9 @@ function get_sets()
 	sets.precast['Spinning Attack'] = {
 		neck = "Fotia Gorget",
 		--back = "Smertrios's Mantle",
-		ring1= "Ilabrat Ring",
+		ring1= "Regal Ring",
 		ring2= "Niqmaddu Ring",
+		hands = "Anchor. Gloves +3",
 		ear1 = "Ishvara Earring",
 		ear2 = "Moonshade Earring",
 		waist = "Fotia Belt",
