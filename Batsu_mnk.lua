@@ -60,7 +60,7 @@ function get_sets()
 	sets.precast.Focus = {head = "Anch. Crown +3"}
 	
 	--Dodge
-	sets.precast.Dodge = {feet = "Anch. Gaiters +2"}
+	sets.precast.Dodge = {feet = "Anch. Gaiters +3"}
 	
 	--Chi Blast (Stack MND)
 	sets.precast.ChiBlast = {
@@ -90,12 +90,12 @@ function get_sets()
 		head = "Anch. Crown +3",
 		neck = "Promise Badge",
 		ear1 = "Kemas Earring",
-		body = "Anch. Cyclas +2",
+		body = "Anch. Cyclas +3",
 		hands = "Hes. Gloves +1",
 		back = "Anchoret's Mantle",
 		waist = "Warwolf Belt",
-		legs = "Anch. Hose +2",
-		feet = "Anch. Gaiters +2"
+		legs = "Anch. Hose +3",
+		feet = "Anch. Gaiters +3"
 	}
 	
 	--Finally some weaponskill action

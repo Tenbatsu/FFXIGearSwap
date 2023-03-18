@@ -145,7 +145,7 @@ function get_sets()
 		hands = "Nyame Gauntlets",
 		waist = "Fotia Belt",
 		legs = "Nyame Flanchard",
-		feet = "Nyame Sollerets",
+		feet = "Lanun Bottes +2",
 		back = "Camulus's Mantle"
 	}
 	
