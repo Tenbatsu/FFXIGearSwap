@@ -77,7 +77,7 @@ function get_sets()
 		neck = "Aceso's choker +1",
 		ring1 = "Vertigo Ring",
 		ring2 = "Kishar Ring",
-		legs = "Ebers Pant. +1",
+		legs = "Ebers Pant. +2",
 		feet = "Kaykaus Boots"
 	}
 	
@@ -87,7 +87,7 @@ function get_sets()
 		neck = "Aceso's choker +1",
 		ring1 = "Vertigo Ring",
 		ring2 = "Kishar Ring",
-		legs = "Ebers Pant. +1",
+		legs = "Ebers Pant. +2",
 		feet = "Vanya clogs"
 	}
 	
@@ -101,7 +101,7 @@ function get_sets()
 		head="Ebers Cap +2",
 		body="Theo. Bliaut +3",
 		hands="Theophany Mitts +3",
-		legs="Ebers Pant. +1",
+		legs="Ebers Pant. +2",
 		feet={ name="Kaykaus Boots", augments={'Mag. Acc.+15','"Cure" potency +5%','"Fast Cast"+3',}},
 		neck="Aceso's Choker +1",
 		waist="Tengu-no-Obi",
@@ -119,7 +119,7 @@ function get_sets()
 		head="Ebers Cap +2",
 		body="Theo. Bliaut +3",
 		hands="Theophany Mitts +3",
-		legs="Ebers Pant. +1",
+		legs="Ebers Pant. +2",
 		feet={ name="Kaykaus Boots", augments={'Mag. Acc.+15','"Cure" potency +5%','"Fast Cast"+3',}},
 		neck="Aceso's Choker +1",
 		waist="Tengu-no-Obi",
@@ -137,7 +137,7 @@ function get_sets()
 		head="Ebers Cap +2",
 		body="Theo. Bliaut +3",
 		hands="Theophany Mitts +3",
-		legs="Ebers Pant. +1",
+		legs="Ebers Pant. +2",
 		feet={ name="Kaykaus Boots", augments={'Mag. Acc.+15','"Cure" potency +5%','"Fast Cast"+3',}},
 		neck="Aceso's Choker +1",
 		waist="Tengu-no-Obi",
@@ -155,7 +155,7 @@ function get_sets()
 		head="Ebers Cap +2",
 		body="Theo. Bliaut +3",
 		hands="Theophany Mitts +3",
-		legs="Ebers Pant. +1",
+		legs="Ebers Pant. +2",
 		feet="Vanya Clogs",
 		neck="Aceso's Choker +1",
 		waist="Eschan Stone",
@@ -167,7 +167,7 @@ function get_sets()
 	}
 	
 	sets.midcast.Barspell = {
-		body = "Ebers Bliaut +1"
+		body = "Ebers Bliault +1"
 	}
 	
 end --End Function get_sets

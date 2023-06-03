@@ -56,7 +56,7 @@ function get_sets()
 		neck = "Iskur Gorget",
 		left_ear = "Telos Earring",
 		right_ear = "Cessance Earring",
-		body = "Laksamana's Frac +2",
+		body = "Laksamana's Frac +3",
 		hands = "Lanun Gants +1",
 		left_ring = "Dingir Ring",
         right_ring = "Regal Ring",
@@ -98,10 +98,10 @@ function get_sets()
 	sets.precast['Caster\'s Roll'] = set_combine(sets.precast.PhantomRoll, {legs = "Chasseur's Culottes"})
 	sets.precast['Courser\'s Roll'] = set_combine(sets.precast.PhantomRoll, {feet = "Chasseur's Bottes"})
 	
-	sets.precast["Wild Card"] = { feet = "Lanun Bottes +1"}
+	sets.precast["Wild Card"] = { feet = "Lanun Bottes +2"}
 	
 	sets.precast["Quick Draw"] = { 
-		head = "Laksamana's Tricorne +1",
+		head = "Laksamana's Tricorne +2",
 		feet = "Laksamana's Bottes +2"
 		}
 		
@@ -143,7 +143,9 @@ function get_sets()
 		head = "Nyame Helm",
 		body = "Lanun Frac +3",
 		hands = "Nyame Gauntlets",
-		waist = "Fotia Belt",
+		right_ring = "Dingir Ring",
+		left_ring = "Archon Ring",
+		waist = "Eschan Stone",
 		legs = "Nyame Flanchard",
 		feet = "Lanun Bottes +2",
 		back = "Camulus's Mantle"
@@ -157,6 +159,7 @@ function get_sets()
 		head = "Nyame Helm",
 		body = "Nyame Mail",
 		hands = "Nyame Gauntlets",
+		right_ring = "Dingir Ring",
 		waist = "Fotia Belt",
 		legs = "Nyame Flanchard",
 		feet = "Nyame Sollerets",

@@ -8,11 +8,11 @@ function get_sets()
 		
 	sets.aftercast.Idle = {
 		ammo="Ginsen",
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		head="Malignance Chapeau",
 		body = "Ashera Harness",
 		hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
-		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
-		feet={ name="Herculean Boots", augments={'Accuracy+24 Attack+24','Crit. hit damage +2%','DEX+9','Attack+4',}},
+		legs="Malignance Tights",
+		feet="Nyame Sollerets",
 		neck="Twilight Torque",
 		waist="Black Belt",
 		left_ear="Sherida Earring",
@@ -25,10 +25,10 @@ function get_sets()
 	--Set for face punching
 	sets.aftercast.TP = {
 		ammo="Ginsen",
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		head="Malignance Chapeau",
 		body = "Ashera Harness",
 		hands={ name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}},
-		legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
+		legs="Malignance Tights",
 		feet = "Tatena. Sune. +1",
 		neck="Combatant's Torque",
 		waist="Windbuffet Belt +1",
@@ -41,8 +41,9 @@ function get_sets()
 	
 	--Set for resting
 	sets.aftercast.hHP = {
-		body = "Hes. Cyclas +1",
-		back = "Melee Cape"
+		body = "Hes. Cyclas +3",
+		neck = "Sanctity Necklace"
+		--back = "Melee Cape"
 	}
 	
 	--Establish the base precast set
@@ -51,7 +52,7 @@ function get_sets()
 	--Some Job Abilities
 	
 	--Hundred Fists
-	sets.precast.HundredFists = {legs = "Hes. Hose +1"}
+	sets.precast.HundredFists = {legs = "Hes. Hose +2"}
 	
 	--Boost
 	sets.precast.Boost = {hands = "Anchor. Gloves +3",}
@@ -66,6 +67,7 @@ function get_sets()
 	sets.precast.ChiBlast = {
 		head = "Anch. Crown +3",
 		body = "Nyame Mail",
+		neck = "Promise Badge",
 		ring1 = "Aqua Ring",
 		ring2 = "Aqua Ring",
 		back = "Melee Cape",
@@ -74,21 +76,21 @@ function get_sets()
 		feet = "Shukuyu Sune-Ate"}
 		
 	--Counterstance
-	sets.precast.Counterstance = {feet = "Hes. Gaiters +1"}
+	sets.precast.Counterstance = {feet = "Hes. Gaiters +2"}
 	
 	--Impetus
-	sets.precast.Impetus = {body = "Bhikku Cyclas +1"}
+	sets.precast.Impetus = {body = "Bhikku Cyclas +2"}
 	
 	--Footwork
 	sets.precast.Footwork = {feet = "Bhikku Gaiters +1"}
 	
 	--Forlmless Strikes
-	sets.precast['Formless Strikes'] = {"Hes. Cyclas +1"}
+	sets.precast['Formless Strikes'] = {"Hes. Cyclas +3"}
 	
 	--Chakra (Stack VIT)
 	sets.precast.Chakra = {
 		head = "Anch. Crown +3",
-		neck = "Promise Badge",
+		neck = "Sanctity Necklace",
 		ear1 = "Kemas Earring",
 		body = "Anch. Cyclas +3",
 		hands = "Hes. Gloves +1",

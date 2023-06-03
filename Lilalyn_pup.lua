@@ -71,14 +71,14 @@ function get_sets()
 		neck = "Shulmanu Collar",
 		left_ear = "Digni. Earring",
 		right_ear = "Cessance Earring",
-		body = "Tali'ah Manteel +2",
+		body = "Pitre Tobe +3",
 		hands = "Tali'ah Gages +2",
 		left_ring = "Raja's Ring",
 		right_ring = "Varar Ring",
 		back = "Dispersal Mantle",
 		waist = "Eschan Stone",
 		legs = "Tali'ah Sera. +2",
-		feet = "Tali'ah Crackows +2"	
+		feet = "Mpaca's Boots"	
 	}
  
     sets.idle.PetDT = {
@@ -88,12 +88,12 @@ function get_sets()
         --Total 45% from Gear
         main = "Condemners", -- 4% DT
         --neck = "Shepherd's Chain", -- 2% DT
-        legs = "Foire Churidars +2", -- 3% DT
-        --waist = "Isa Belt", -- 3% DT
-        feet = "Rao Sune-Ate", -- 3% DT
+        legs = "Foire Churidars +3", -- 3% DT
+        waist = "Isa Belt", -- 3% DT
+        feet = "Mpaca's Boots", -- 3% DT
         hands = "Rao Kote", -- 3% DT
         --head = "Anwig Salade", -- 10% DT
-        --body = "Rao Togi +1", -- 4% DT
+        body = "Pitre Tobe +3", -- 4% DT  Rao Togi +1
         back = "Visucius's Mantle",
         left_ear = "Handler's Earring +1",
 		right_ear = "Enmerkar Earring",
@@ -119,16 +119,16 @@ function get_sets()
 		ranged = "Animator P",
         head = "Tali'ah Turban +2",
 		neck = "Shulmanu Collar",
-		left_ear = "Handler's Earring +1",
+		left_ear = "Burana earring",
 		right_ear = "Enmerkar Earring",
-		body = "Tali'ah Manteel +2",
+		body = "Pitre Tobe +3",
 		hands = "Tali'ah Gages +2",
 		left_ring = "Thurandaut Ring",
 		right_ring = "Varar Ring",
 		back = "Dispersal Mantle",
 		waist = "Kuku Stone",
 		legs = "Tali'ah Sera. +2",
-		feet = "Tali'ah Crackows +2",
+		feet = "Mpaca's Boots",
         back = "Visucius's Mantle"
     })
 
@@ -188,10 +188,10 @@ function get_sets()
     head="Tali'ah Turban +2",
     --body={ name="Herculean Vest", augments={'Pet: Mag. Acc.+28','Pet: AGI+5','Pet: "Mag.Atk.Bns."+15',}},
     hands="Tali'ah Gages +2",
-    --feet="Foire Babouches +3",
+    feet="Foire Babouches +3",
     legs="Tali'ah Seraweels +2",
     neck="Adad Amulet",
-    --ear2="Burana Earring",
+    ear2="Burana Earring",
     ear1="Enmerkar Earring",
     back = "Visucius's Mantle"
     --ring2="Tali'ah Ring",
