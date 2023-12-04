@@ -135,7 +135,7 @@ function get_sets()
 		sub="Sors Shield",
 		ammo="Sapience Orb",
 		head="Ebers Cap +2",
-		body="Theo. Bliaut +3",
+		body="Piety Bliaut +3",
 		hands="Theophany Mitts +3",
 		legs="Ebers Pant. +2",
 		feet={ name="Kaykaus Boots", augments={'Mag. Acc.+15','"Cure" potency +5%','"Fast Cast"+3',}},

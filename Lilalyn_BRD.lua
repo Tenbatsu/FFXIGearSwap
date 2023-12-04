@@ -53,7 +53,7 @@ function get_sets()
 		body="Inyanga Jubbah +2",
 		hands="Fili Manchettes +1",
 		legs="Doyen Pants",
-		feet="Brd. Slippers +2",
+		feet="Bihu Slippers",
 		neck="Voltsurge Torque",
 		waist="Tengu-no-Obi",
 		left_ear="Etiolation Earring",

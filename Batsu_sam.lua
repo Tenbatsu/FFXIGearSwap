@@ -11,7 +11,7 @@ function get_sets()
 	sets.aftercast.Idle = {
 		ammo = "Ginsen",
 		head = "Wakido Kabuto +3",
-		body = "Kasuga Domaru +2",
+		body = "Kasuga Domaru +3",
 		hands = "Wakido Kote +3",
 		legs = "Flamma Dirs +2",
 		feet = "Tatena. Sune. +1",
@@ -30,7 +30,7 @@ function get_sets()
 		--sub = "Bloodrain Strap",
 		ammo = "Ginsen",
 		head = "Flam. zucchetto +2",
-		body = "Kasuga Domaru +2",
+		body = "Kasuga Domaru +3",
 		hands = "Wakido Kote +3",
 		legs = "Flamma Dirs +2",
 		feet = "Tatena. Sune. +1",
