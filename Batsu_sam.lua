@@ -13,12 +13,12 @@ function get_sets()
 		head = "Wakido Kabuto +3",
 		body = "Kasuga Domaru +3",
 		hands = "Wakido Kote +3",
-		legs = "Flamma Dirs +2",
+		legs = "Kasuga Haidate +2",
 		feet = "Tatena. Sune. +1",
 		neck = "Twilight Torque",
 		waist = "Flume Belt +1",
 		left_ear = "Telos Earring",
-		right_ear = "Dedition Earring",
+		right_ear = "Kasuga Earring",
 		ring1 = "Defending Ring",
         ring2 = "Vocane Ring +1",
 		back = "Shadow Mantle"
@@ -29,22 +29,22 @@ function get_sets()
 		--main = "Umaru",
 		--sub = "Bloodrain Strap",
 		ammo = "Ginsen",
-		head = "Flam. zucchetto +2",
+		head = "Kasuga Kabuto +2",
 		body = "Kasuga Domaru +3",
 		hands = "Wakido Kote +3",
-		legs = "Flamma Dirs +2",
+		legs = "Kasuga Haidate +2",
 		feet = "Tatena. Sune. +1",
 		neck = "Sam. Nodowa +2",
 		waist = "Windbuffet Belt +1",
 		left_ear = "Telos Earring",
-		right_ear = "Dedition Earring",
+		right_ear = "Kasuga Earring",
 		left_ring = "Ilabrat Ring",
 		right_ring = "Niqmaddu Ring",
 		back = "Takaha Mantle"
 	}
 	
 	--Set for resting
-	sets.aftercast.hHP = set_combine(sets.aftercast.TP,{})
+	sets.aftercast.hHP = set_combine(sets.aftercast.Idle,{})
 	
 	--Establish the base precast set
 	sets.precast = {}
@@ -53,43 +53,43 @@ function get_sets()
 	
 	--Meikyo Shisui
 	sets.precast["Meikyo Shisui"] = {
-		feet = "Sakonji Sune-ate"}
+		feet = "Kasuga Sune-ate +2"}
 	
 	--Hasso
 	sets.precast["Hasso"] = {
-		legs = "Unkai Haidate +2",
+		legs = "Kasuga Haidate +2",
 		hands = "Wakido Kote +3"}
 	
 	--Seigan
-	sets.precast["Seigan"] = {head = "Unkai Kabuto +1"}
+	sets.precast["Seigan"] = {head = "Kasuga Kabuto +2"}
 	
 	--Sekkanoki
-	sets.precast["Sekkanoki"] = {hands = "Unkai Kote +1"}
+	sets.precast["Sekkanoki"] = {hands = "Kasuga Kote +2"}
 	
 	--Third Eye
-	sets.precast["Third Eye"] = {legs = "Sakonji Haidate"}
+	sets.precast["Third Eye"] = {legs = "Kasuga Haidate +2"}
 	
 	--Meditate
 	sets.precast["Meditate"] = {
-		hands = "Sakonji Kote +1",
+		hands = "Kasuga Kote +2",
 		head = "Wakido Kabuto +3",
 		back = "Smertrios's Mantle"}
 	
 	--Shikikoyo
-	sets.precast["Shikikoyo"] = {legs = "Sakonji Haidate"}
+	sets.precast["Shikikoyo"] = {legs = "Kasuga Haidate +2"}
 	
 	--Warding Circle
 	sets.precast["Warding Circle"] = {head = "Wakido Kabuto +3"}
 	
 	--Blade Bash
-	sets.precast["Blade Bash"] = {hands = "Sakonji Kote +1"}
+	sets.precast["Blade Bash"] = {hands = "Kasuga Kote +2"}
 	
 	--Finally some weaponskill action
 	--Tachi: Yukikaze 75% STR
 	sets.precast['Tachi: Yukikaze'] = {
 		neck = "Fotia Gorget",
 		body = "Sakonji Domaru +3",
-		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		hands= "Kasuga Kote +2",
 		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		back = "Smertrios's Mantle",
 		ring1= "Ilabrat Ring",
@@ -102,7 +102,7 @@ function get_sets()
 	sets.precast['Tachi: Gekko'] = {
 		neck = "Fotia Gorget",
 		body = "Sakonji Domaru +3",
-		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		hands= "Kasuga Kote +2",
 		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
 		ear2 = "Ishvara Earring",
@@ -117,7 +117,7 @@ function get_sets()
 	sets.precast['Tachi: Kasha'] = {
 		neck = "Fotia Gorget",
 		body = "Sakonji Domaru +3",
-		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		hands="Kasuga Kote +2",
 		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
 		ear2 = "Ishvara Earring",
@@ -132,7 +132,7 @@ function get_sets()
 	sets.precast['Tachi: Rana'] = {
 		neck = "Fotia Gorget",
 		body = "Sakonji Domaru +3",
-		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		hands= "Kasuga Kote +2",
 		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
 		ear2 = "Ishvara Earring",
@@ -147,7 +147,7 @@ function get_sets()
 	sets.precast['Tachi: Shoha'] = {
 		neck = "Fotia Gorget",
 		body = "Sakonji Domaru +3",
-		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		hands= "Kasuga Kote +2",
 		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
 		ear2 = "Ishvara Earring",
@@ -162,7 +162,7 @@ function get_sets()
 	sets.precast['Tachi: Fudo'] = {
 		neck = "Fotia Gorget",
 		body = "Sakonji Domaru +3",
-		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		hands= "Kasuga Kote +2",
 		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
 		ear2 = "Ishvara Earring",
@@ -192,7 +192,7 @@ function get_sets()
 	sets.precast.WS = {
 		neck = "Fotia Gorget",
 		body = "Sakonji Domaru +3",
-		hands={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%',}},
+		hands= "Kasuga Kote +2",
 		head={ name="Valorous Mask", augments={'Weapon skill damage +4%','INT+2','Accuracy+11','Attack+7',}},
 		ear1 = "Moonshade Earring",
 		ear2 = "Ishvara Earring",
